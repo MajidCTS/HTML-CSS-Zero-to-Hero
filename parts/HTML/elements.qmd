@@ -348,6 +348,80 @@ _top
 </body>
 </html>
 ```
+## span
+عنصر `<span>` در HTML یک ظرف درون‌خطی عمومی برای بیان محتوا است که ذاتاً چیزی را نشان نمی‌دهد. می‌توان از آن برای گروه‌بندی عناصر به منظور سبک‌دهی (با استفاده از ویژگی‌های class یا id) یا به دلیل اشتراک‌گذاری مقادیر ویژگی‌ها، مانند lang، استفاده کرد. این عنصر فقط باید زمانی استفاده شود که هیچ عنصر معنایی دیگری مناسب نباشد. `<span>` بسیار شبیه به عنصر `<div>` است، اما `<div>` یک عنصر سطح بلوکی است در حالی که `<span>` یک عنصر سطح درون‌خطی است.
+
+```html
+<p>
+  Add the <span class="ingredient">basil</span>,
+  <span class="ingredient">pine nuts</span> and
+  <span class="ingredient">garlic</span> to a blender and blend into a paste.
+</p>
+
+<p>
+  Gradually add the <span class="ingredient">olive oil</span> while running the
+  blender slowly.
+</p>
+```
+
+:::{.ltr .output}
+<p>
+  Add the <span class="ingredient">basil</span>,
+  <span class="ingredient">pine nuts</span> and
+  <span class="ingredient">garlic</span> to a blender and blend into a paste.
+</p>
+
+<p>
+  Gradually add the <span class="ingredient">olive oil</span> while running the
+  blender slowly.
+</p>
+:::
+
+## bdi [^11]
+وقتی میدانیم درون یک متن راست به چپ یا چپ به راست احتمال درج زبانی در خلاف جهت وجود دارد از این تگ استفاده می کنیم تا چینش متن به هم نخورد:
+
+[^11]: Bi-Directional Isolation
+
+```html
+<ul>
+   <li>User <bdi>hrefs</bdi>: 60 points</li>
+   <li>User <bdi>jdoe</bdi>: 80 points</li>
+   <li>User <bdi>إيان</bdi>: 90 points</li>
+</ul>
+```
+
+:::{.ltr .output}
+<ul>
+   <li>User <bdi>hrefs</bdi>: 60 points</li>
+   <li>User <bdi>jdoe</bdi>: 80 points</li>
+   <li>User <bdi>إيان</bdi>: 90 points</li>
+</ul>
+:::
+
+در کنار آن تگ bdo را داریم. 
+
+`<bdi>` = "خودت جهت را تشخیص بده، فقط از بقیه جداش کن."
+
+`<bdo>` = "به تشخیصت کاری ندارم؛ دقیقاً از جهتی که من می‌گویم نمایش بده."
+
+```html
+<p dir="ltr">
+    <bdo>ABC-123-XYZ</bdo>
+    <br>
+    <bdi>ABC-123-XYZ</bdi>
+</p>
+```
+
+:::{.ltr .output}
+<p dir="rtl">
+    <bdo>ABC-123-XYZ</bdo>
+    <br>
+    <bdi>ABC-123-XYZ</bdi>
+</p>
+:::
+
+
+
 ## تگ های مفهومی
 طراحان سایت و برنامه نویسان صفحه را به کمک تگ های  `header` و `main` و `footer` به چند بخش تقسیم می کنند و هر بخش را به کمک تگ `section` به چند زیر بخش. این tag ها مثل Div کاربرد container بودن هم دارند. مثل Div هم Block-level هستند. تفاوت آنها این است که Div برای ایجاد یک container والد که دارای چند فرزند است ایجاد می‌شود ولی این تگ ها برای جدا کردن بخش های مفهومی سایت استفاده می شوند که برای موتورهای جستجو و کاربران 
 معنی
@@ -745,12 +819,12 @@ td {
 
 
 | **تگ**       | **کاربرد **                       | **مثال**                 | **نتیجه**                |
-|--------------|-----------------------------------|--------------------------|--------------------------|
-| **<b> **     | متن پررنگ (Bold)                  | <b>متن پررنگ</b>         | متن پررنگ                |
-| **<i> **     | متن کج (Italic)                   | <i>متن کج</i>            | متن کج                   |
-| **<u> **     | <u>متن زیرخط‌دار</u> (Underline)  | <u>متن زیرخط‌دار</u>     | <u>متن زیرخط‌دار</u>     |
-| **<s> **     | ~~متن خط‌خورده~~ (Strikethrough)  | <s>متن خط‌خورده</s>      | ~~متن خط‌خورده~~         |
-| **<small> ** | متن کوچک                          | <small>متن کوچک</small>  | <small>متن کوچک</small>  |
+|---------------|-----------------------------------|--------------------------|--------------------------|
+|   `<b>`       | متن پررنگ (Bold)                  | <b>متن پررنگ</b>         | متن پررنگ                |
+|   `<i>`        | متن کج (Italic)                   | <i>متن کج</i>            | متن کج                   |
+|   `<u>`        | <u>متن زیرخط‌دار</u> (Underline)  | <u>متن زیرخط‌دار</u>     | <u>متن زیرخط‌دار</u>     |
+|   `<s>`        | ~~متن خط‌خورده~~ (Strikethrough)  | <s>متن خط‌خورده</s>      | ~~متن خط‌خورده~~         |
+|   `<small>`    | متن کوچک                          | <small>متن کوچک</small>  | <small>متن کوچک</small>  |
 
 ## Phrase tags
 
@@ -1330,5 +1404,375 @@ cc_load_policy = 1
 For Default caption
 :::
 
-## iframe
+## iframe [^11]
+
+[^11]:Inline Frame
+
+برای نمایش یک سایت دیگر در سایتمان و در یک قاب با ابعاد مشخص:
+
+```html
+<iframe src="https://test.com" height="200" width="300"></iframe>
+```
+
+برای نمایش فیلم های یوتیوب و آپارات می توان از آن استفاده کرد:
+
+
+```html
+<iframe src="https://www.aparat.com/video/video/embed/videohash/zsz7161/vt/frame"     allowFullScreen="true"
+    webkitallowfullscreen="true" mozallowfullscreen="true">
+</iframe>
+```
+
+```html
+یا برای نمایش نقشه گوگل مپ:
+```
+
+```html
+<iframe src="https://www.google.com/maps/embed?..." width="600" height="450">
+</iframe>
+```
+
+یا فایل pdf:
+
+```html
+<iframe
+    src="../../assets/files/sample.pdf"
+    width="100%"
+    height="700">
+</iframe>
+```
+
+همچنین نمایش داشبوردها و ابزارهای تحت وب مثل تقویم و …
+
+ویژگی زیر باعث می شود محتوی فقط زمانی بارگزاری شود که به آن نزدیک می شویم:
+
+```html
+<iframe
+    loading="lazy"
+    src="video.html">
+</iframe>
+```
+
+همه سایت ها اجازه نمی دهند داخل iFrame نمایش داده شوند مثلا کد زیر :
+
+```html
+<iframe src="https://google.com"></iframe>
+```
+
+خطای Refused to display because it set X-Frame-Options… خواهد داشت. مدیر سایت به دلایل امنیتی این مجوز را رد کرده است.
+
+در این تگ هم مثل تگ `img` می توان از ویژگی `loading` استفاده کرد.
+
+## Form Elements
+فورم های HTML برای جمع آوری و ارسال اطلاعات فرم به سرور استفاده می شوند.
+
+```html
+ <form action="/action_page.php">
+   <label for="fname">First name:</label><br>
+   <input type="text" id="fname" name="fname" value="John"><br>
+   <label for="lname">Last name:</label><br>
+   <input type="text" id="lname" name="lname" value="Doe"><br><br>
+   <input type="submit" value="Submit"> 
+</form>
+```
+:::{.ltr .output}
+ <form action="/action_page.php">
+   <label for="fname">First name:</label><br>
+   <input type="text" id="fname" name="fname" value="John"><br>
+   <label for="lname">Last name:</label><br>
+   <input type="text" id="lname" name="lname" value="Doe"><br><br>
+   <input type="submit" value="Submit"> 
+</form>
+:::
+
+بین انواع متدهای HTTP در نوع Get اطلاعات در شکل Query string بعد از یک علامت سوال در address bar ارسال می شوند ولی در متد post اطلاعات قابل رویت نیستند.
+
+:::{.ltr}
+https://www.w3schools.com/action_page.php?<mark>firstname=John&lastname=Doe</mark>
+:::
+
+مثال برای متد post : 
+
+![تصویر 14](../../assets/images/chapter-html/post.webp)
+
+![تصویر 15](../../assets/images/chapter-html/post-headers.webp)
+
+برای مشخص کردن بازه  برای Input
+از نوع number  می توان از  مشخصه های زیر استفاده کرد:
+
+```html
+<input type="number" min="5" max="10" value="17">
+```
+
+### datalist
+برای تهیه لیستی از آیتم های یک  input استفاده می‌شود:
+
+```html
+<form action="/action_page.php" method="get">
+   <label for="browser">Choose your browser from the list:</label>
+   <input list="browsers" name="browser" id="browser">
+   <datalist id="browsers">
+      <option value="Edge">
+      <option value="Firefox">
+      <option value="Chrome">
+      <option value="Opera">
+      <option value="Safari">
+   </datalist>
+   <input type="submit">
+</form>
+```
+
+:::{.ltr .output}
+<form action="/action_page.php" method="get">
+   <label for="browser">Choose your browser from the list:</label>
+   <input list="browsers" name="browser" id="browser">
+   <datalist id="browsers">
+      <option value="Edge">
+      <option value="Firefox">
+      <option value="Chrome">
+      <option value="Opera">
+      <option value="Safari">
+   </datalist>
+   <input type="submit">
+</form>
+:::
+
+### fieldset
+برای گروه کردن تعدادی از عناصر مرتبط با هم استفاده می‌شود و دور آنها یک مستطیل رسم می کند:
+
+```html
+<form action="/action_page.php">
+   <fieldset>
+      <legend>Personalia:</legend>
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname"><br><br>
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname"><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="birthday">Birthday:</label>
+      <input type="date" id="birthday" name="birthday"><br><br>
+      <input type="submit" value="Submit">
+   </fieldset>
+</form>
+```
+
+:::{.ltr .output}
+<form action="/action_page.php">
+   <fieldset class="my-fieldset">
+      <legend class="my-legend">Personalia:</legend>
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname"><br><br>
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname"><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="birthday">Birthday:</label>
+      <input type="date" id="birthday" name="birthday"><br><br>
+      <input type="submit" value="Submit">
+   </fieldset>
+</form>
+:::
+## details
+برای درج جزییات باز شونده برای یک عنوان استفاده می‌شود.
+
+```html
+<details>
+   <summary>Epcot Center</summary>
+   <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+</details>
+```
+
+:::{.ltr .output}
+<details>
+   <summary>Epcot Center</summary>
+   <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+</details>
+:::
+
+### dialog
+برای ایجاد جعبه‌های گفتگو (Dialog Box) یا پنجره‌های تعاملی استفاده میشه.
+از سال 2013 به کمک `popover` می توان از بدون نیاز به جاوا اسکریپت استفاده کرد:
+
+```html
+<button popovertarget="dialog">Show a dialog</button>
+<dialog id="dialog" popover>
+    <form method="form-dialog">
+        <p>The background shown outside of this dialog is a backdrop.</p>
+        <button popovertarget="dialog" popovertargetaction="hide" type="button">Close the dialog</button>
+    </form>
+</dialog>
+```
+
+:::{.ltr .output}
+<button popovertarget="mydialog">Show a dialog</button>
+<dialog id="mydialog" popover>
+    <form method="form-dialog">
+        <p>The background shown outside of this dialog is a backdrop.</p>
+        <button popovertarget="mydialog" popovertargetaction="hide" type="button">Close the dialog</button>
+    </form>
+</dialog>
+:::
+نکته کد فوق این است که type=button حتما باید قید شود چون دکمه در form قرار گرفته و نوع پیش فرض آن submit است. در نتیجه بین Dialog API و Popover API تداخل عملکرد به وجود می‌آید.
+
+ این تگ به شما اجازه میده به راحتی و بدون نیاز به جاوا اسکریپت سنگین، یک دیالوگ (مثل هشدار، فرم، یا پنجره تأیید) در صفحه ایجاد کنید.
+
+## SVG
+برای طراحی برداری تصاویر از این تگ استفاده می‌شود.ترسیم تعدادی خط به کمک این تگ و زیرتگ polyline انجام می‌شود.
+
+xmlns مخفف XML NameSpace است و مشخص می‌کند که این فایل از کدام دیکشنری (مجموعه قوانین) تگ‌ها استفاده می‌کند.
+
+
+### circle
+برای ترسیم دایره:
+
+```html
+<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="5" cy="5" r="3" fill="orange" />
+</svg>
+```
+cx و cy مختصات مرکز دایره هستند و می توانند عدد یا درصد باشند. R  شعاع دایره است.
+
+:::{.output}
+![](../../assets/images/chapter-html/circle.svg)
+:::
+مقدار ویژگی viewBox لیستی از چهار عدد است که با فاصله و/یا کاما از هم جدا شده‌اند: min-x، min-y، width و height. min-x و min-y کوچکترین مختصات X و Y را که viewBox ممکن است داشته باشد (مختصات مبدا viewBox) نشان می‌دهند و عرض و ارتفاع، اندازه viewBox را مشخص می‌کنند.
+
+ viewBox حاصل، مستطیلی در فضای کاربر است که به مرزهای نمای یک عنصر SVG (نه نمای مرورگر) نگاشت شده است. هنگامی که یک SVG حاوی ویژگی viewBox است (اغلب در ترکیب با ویژگی preserveAspectRatio)، یک transform، نمای SVG را کشیده یا تغییر اندازه می‌دهد تا با container یا والد خود مطابقت داشته باشد.
+
+### rect
+برای ترسیم مستطیل:
+
+```html
+<svg viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Regular rectangle -->
+  <rect width="100" height="100" fill="green" />
+
+
+  <!-- Rounded corner rectangle -->
+  <rect x="120" width="100" height="100" rx="15" fill="red" />
+</svg>
+```
+:::{.ltr .output}
+![](../../assets/images/chapter-html/rect.svg)
+:::
+
+### polyline
+```html
+<svg height="180" width="500">
+  <polyline
+	points="0,40 40,40 40,80 80,80 80,120 120,120 120,160"
+	style="fill:white;stroke:red;stroke-width:4"
+  />
+</svg>
+```
+:::{.output}
+![](../../assets/images/chapter-html/polyline.svg)
+:::
+در واقع زوج اعداد فوق مختصات نقاطی هستند که باید به هم با عرض و طول مشخص شده متصل شوند. عرض و ارتفاع مشخص کننده کادری است که ترسیم باید در آن انجام شود.
+
+خاصیت های height و width نیز ابعاد کادری که ترسیم باید در آنها انجام شود مشخص می کنند.
+
+### path
+زیر تگ path نیز همراه با دستورات خاص برای رسم خط استفاده می‌شود:
+
+:::{.ltr}
+M = moveto
+
+L = lineto
+
+H = horizontal lineto
+
+V = vertical lineto
+
+C = curveto
+
+S = smooth curveto
+
+Q = quadratic Bézier curve
+
+T = smooth quadratic Bézier curveto
+
+A = elliptical Arc
+
+Z = closepath
+:::
+
+```html
+<svg height="210" width="400"  xmlns="http://www.w3.org/2000/svg">
+  <path d="M150 0 L75 200 L225 200 Z" fill="yellow"/>
+</svg>
+```
+
+:::{.ltr .output}
+![](../../assets/images/chapter-html/path.svg)
+:::
+
+با همین دستورات ساده می توان تصاویر پیچیده ای خلق کرد
+
+
+### متدهای استفاده از SVG 
+فایل های برداری نقاشی شده هستند.به روش های مختلفی می توان از آنها استفاده کرد:
+
+:::{.ltr}
+
+| `<svg>`     | اطلاعات را درون یک تگ SVG قرار می دهیم   |
+|-----------|------------------------------------------|
+| Sprite    | به کمک تگ های symbole و  use             |
+| `<img>`     | فایل svg را به عنوان src به آن می دهیم   |
+| `<picture>` |                                          |
+| css url() |                                          |
+| `<object>`  | آدرس فایل را در خاصیت  data قرار می دهیم |
+| `<iframe>`  |                                          |
+| `<embed>`   |                                          |
+:::
+
+روش sprite به این شکل است:
+
+```html
+<svg viewBox="0 0 80 20" xmlns="http://www.w3.org/2000/svg">
+    <!-- Our symbol in its own coordinate system -->
+    <symbol id="myDot" width="10" height="10" viewBox="0 0 2 2">
+        <circle cx="1" cy="1" r="1" />
+    </symbol>
+
+
+    <symbol id="myRect" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="100%" height="100%" />
+    </symbol>
+</svg>
+
+
+<svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+    <use href="./img/svgs.svg#icon-warning" x=20 fill="blue" />
+</svg>
+```
+
+مثال برای تگ picture و  embed و object  و تابع url
+
+```html
+<picture>
+    <source type="image/svg+xml" srcset="./img/metalmarious_Laptop.svg">
+    <img src="sun.png" alt="">
+</picture>
+
+<object type="image/svg+xml" data="./img/metalmarious_Laptop.svg">
+    <!-- Fallback (تصویر جایگزین یا متن جایگزین) -->
+</object>
+
+<embed
+  type="image/jpeg"
+  src="/shared-assets/images/examples/flowers.jpg"
+  width="250"
+  height="200" />
+```
+
+```css
+.laptop {
+    height: 200px;
+    background-image: url("./img/metalmarious_Laptop.svg");
+    background-repeat: no-repeat;
+}
+```
+در صورتی که قصد ایجاد انیمیشن روی SVG داشته باشید هر روش نکات خاص خود را خواهد داشت.
 

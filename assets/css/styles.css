@@ -110,6 +110,7 @@ code {
 
 .ltr {
     direction: ltr;
+    font-size: .8rem;
 }
 
 
@@ -134,4 +135,20 @@ code {
     letter-spacing: 10%;
     color: gray;
     font-size: .6rem;
+}
+
+
+.my-fieldset {
+    border: 1px solid #dee2e6;
+    padding: 0.5rem 1rem 1rem 1rem;
+    border-radius: 0.375rem;
+}
+
+
+.my-legend {
+    float: none;
+    width: auto;
+    padding: 0 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
