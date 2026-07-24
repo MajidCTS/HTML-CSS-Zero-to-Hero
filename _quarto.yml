@@ -32,8 +32,8 @@ format:
       - assets/js/main.js
   pdf:
     documentclass: scrreprt
-  epub:
-    cover-image: assets/images/cover.webp
+  # epub:
+  #   cover-image: assets/images/cover.webp
 
 
 
