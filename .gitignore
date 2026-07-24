@@ -1,26 +1,36 @@
 # ============================================
-# فایل‌های پشتیبان (backup)
+# Backup files
 # ============================================
 *.bak
 *.backup
 *~
 
 # ============================================
-# پوشه‌های خروجی Quarto
+# Quarto output folders
 # ============================================
-_book/          # خروجی کتاب (HTML، PDF، و غیره)
-_site/          # خروجی وب‌سایت
-.quarto/        # فایل‌های موقت و کش (شامل cites/)
-_freeze/        # کش محاسباتی (برای اجرای مجدد کد)
+_book/
+# book output(HTML، PDF، etc)
+
+_site/
+# website output
+
+.quarto/
+# Temporary and cache files (including /cites)
+
+_freeze/
+# Computational cache (for code re-execution)
 
 # ============================================
-# فایل‌های موقت و جانبی
+# Temporary and side files
 # ============================================
-*_files/        # تصاویر و فایل‌های جانبی هر سند
-**/*.quarto_ipynb  # فایل‌های تبدیل‌شده Quarto به Jupyter
+*_files/
+# Images and supporting files for each document
+
+**/*.quarto_ipynb
+# Converted Quarto files to Jupyter
 
 # ============================================
-# فایل‌های خروجی
+# Output files
 # ============================================
 *.html
 *.pdf
@@ -28,27 +38,38 @@ _freeze/        # کش محاسباتی (برای اجرای مجدد کد)
 *.epub
 
 # ============================================
-# محیط‌های توسعه
+# Development environments
 # ============================================
-.DS_Store       # فایل‌های سیستمی macOS
-.Rproj.user     # تنظیمات محلی RStudio
-.idea/          # تنظیمات محلی JetBrains
-*.Rproj         # فایل پروژه RStudio
+.DS_Store
+# macOS system files
+
+.Rproj.user
+# RStudio local settings
+
+.idea/
+# JetBrains local settings
+
+*.Rproj
+# RStudio project file
 
 # ============================================
-# فایل‌های Jupyter
+# Jupyter files
 # ============================================
+
 *.ipynb
 
 
 # ============================================
-# فایل‌های کش پیش‌نمایش ویندوز (Thumbnails)
+# Windows Preview Cache Files (Thumbnails)
 # ============================================
+
 Thumbs.db
 thumbs.db
 ehthumbs.db
-Desktop.ini# ============================================
-# فایل‌های موقتی LaTeX و log
+Desktop.ini
+
+# ============================================
+# Temporary LaTeX and log files
 # ============================================
 *.log
 *.aux
@@ -58,8 +79,4 @@ Desktop.ini# ============================================
 *.lof
 *.lot
 *.toc
-
-
-
 /.quarto/
-**/*.quarto_ipynb
