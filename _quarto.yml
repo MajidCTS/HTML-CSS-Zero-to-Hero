@@ -30,8 +30,10 @@ format:
     css: assets/css/styles.css
     include-after-body:
       - assets/js/main.js
-  pdf:
-    documentclass: scrreprt
+
+  # LaTeX does not recognize WebP yet
+  # pdf:
+  #   documentclass: scrreprt
   # epub:
   #   cover-image: assets/images/cover.webp
 
