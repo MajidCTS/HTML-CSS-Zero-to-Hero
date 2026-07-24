@@ -2,41 +2,275 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "HTML-CSS Zero to Hero",
+    "title": "HTML - CSS از مبتدی تا حرفه‌ای",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "text": "پیشگفتار\n\nهدف از نگارش این کتاب آشنایی تخصصی با HTML و مکمل‌های آن یعنی CSS و JavaScript است. به دلیل گستردگی مبحث جاوا اسکریپت بعد از صحبت درباره این دو پیش نیاز درباره آن در کتاب دیگری صحبت خواهیم کرد. HTML-CSS اهمیت زیادی دارند چون وب‌سایت‌ها تبدیل به یکی از مهم‌ترین رابط‌ها شده‌اند و مرورگرها عضو جدایی ناپذیر سیستم‌های عامل شده‌اند و رقابت سختی بین آنها فراگیر شده تا تبدیل به مرورگر پیش فرض کاربران شوند.\nبدون توجه به اینکه در کدام حوزه فناوری اطلاعات در حال توسعه فردی خود هستید HTML-CSS در عصر حاضر قسمتی از اطلاعات عمومی شما خواهند بود در صورتی که زمانی فقط طراحان وب به این مباحث نیاز حیاتی داشتند. آشنایی با آنها شما را قادر می‌سازد به پتانسیل بالقوه آنها آگاهی پیدا کنید. فردی که در حوزه IT فعالیت می‌کند باید به این توانایی‌ها آشنایی داشته باشد تا جعبه ابزار کامل‌تری در اختیار داشته باشد.\nاین کتاب به درد چه کسانی می‌خوره؟\n\nمبتدیان جسور\nافرادی که به تازگی وارد دنیای برنامه‌نویسی وب شده‌اند. همه آنچه درباره HTML-CSS باید بدانند در این کتاب وجود دارد.\nBackend Developers\nبرنامه‌نویسانی که معمولاً با سرور و پایگاه داده کار می‌کنند و قصد دارند یک آشنایی سریع و کاربردی با بخش Front پیدا کنند. اگر xaml یا razor و … را دیده باشید خواهید دید که به عنوان یک توسعه دهنده سمت سرور باید به عنوان بخشی از مبانی وب با این دو مبحث آشنا باشید.\nFrontend developers\nطراحان وب\nکسانی که به دنبال مرجع به روز هستند\nدر این کتاب سعی شده به روزترین تغییرات حوزه HTML-CSS همواره گردآوری شده و در دسترس متخصصین این حوزه قرار گیرد. مطالب قبلی بر اساس این تغییرات به روز نگه داشته می‌شوند تا آخرین تغییرات مرورگرها و جدیدترین قابلیت‌های این دو حوزه در اختیار شما قرار گیرند.\n\nاین کتاب برای چه کسانی نیست: اگر به دنبال کتابی هستید که صرفاً تگ‌های HTML را لیست کرده باشد، این کتاب برای شما نیست. اما اگر می‌خواهید وب‌سایتی بسازید که در موبایل و دسکتاپ عالی دیده شود، با سیستم‌عامل کاربر هماهنگ بشه و رفتارهای هوشمندانه داشته باشد، خوش آمدید! این کتاب برای شما نوشته شده است. از قابلیت‌های Git روی پروژه‌های مرتبط با HTML و CSS نیز می‌توان استفاده کرد. برای آشنایی با Git این کتاب را مطالعه بفرمایید. یکی دیگر از ابزارهای مفید در این حوزه Developer tools مرورگرها است. برای آشنایی با آن از این کتاب استفاده کنید.",
     "crumbs": [
-      "Preface"
+      "پیشگفتار"
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
+    "objectID": "parts/HTML/index.html",
+    "href": "parts/HTML/index.html",
+    "title": "مقدمه",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. (USA) 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "html یک زبان استاندارد نشانه گذاری سمت کاربر است که از آن برای ایجاد صفحات وب و برنامه‌های کاربردی وب، با استفاده از CSS و جاوا اسکریپت استفاده می‌کنند. مرورگرهای وب اسناد HTML را از یک سرور وب یا از سیستم رایانه دریافت می کنند و اسناد را به صفحات وب چندرسانه ای تبدیل می کنند. عناصر HTML ساختار یک صفحه وب را توصیف می کنند و در اصل شامل نشانه هایی برای ظاهر سند هستند.\nتاکنون نسخه هایی از آن منتشر شده است که html5 آخرین نسخه از آن می باشد.\nساختار تگ های HTML به این صورت است:\n&lt;tag&gt;\n  ...\n&lt;/tag&gt;\nمثلا:\n\nکه داخل کاراکتر های باز و بسته نام عناصر و داخل تگ محتوای آن قرار می گیرد.تگ های HTML معمولا به صورت جفتی مانند\n\nو &lt;/ p&gt; قرار می گیرند. اولین تگ در یک جفت تگ شروع است، برچسب دوم تگ پایان است. تگ پایان مانند تگ شروع بوده، اما قبل از اسم تگ وارد شده است.گاهی نیز به شکل &lt;/&gt; استفاده شده و اصطلاحا self close هستند مثلا:\n&lt;input /&gt;\nدر HTML5 وجود slash آخر نیز اختیاری است. ساختار یک فایل html به شکل زیر است:\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en-US\"&gt;\n   &lt;head&gt;\n      &lt;title&gt;Page title&lt;/title&gt;\n      &lt;meta charset=\"utf-8\" /&gt;\n      &lt;meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\" /&gt;\n      &lt;link rel=\"icon\" type=\"image/x-icon\" href=\"img/favicon.ico\" /&gt;\n      &lt;link rel=\"stylesheet\" href=\"style.css\" /&gt;\n   &lt;/head&gt;\n   &lt;body&gt;\n      &lt;!-- page contents goes here --&gt;\n      &lt;script type=\"text/javascript\" src=\"js/script.js\"&gt;&lt;/script&gt;\n   &lt;/body&gt;\n&lt;/html&gt;",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "HTML",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>مقدمه</span>"
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
+    "objectID": "parts/HTML/elements.html",
+    "href": "parts/HTML/elements.html",
+    "title": "تگ‌ها",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.",
+    "text": "comment\nبرای درج توضیحات در سند html1 از تگ زیر استفاده می‌شود که متن داخل آن کاملا نادیده گرفته خواهد شد:\nهدف از درج توضیحات غیر فعال کردن موقت یک قطعه کد یا درج توضیحاتی برای افزایش خوانایی کد در آینده برای خود کد نویس یا سایر اعضای تیم است.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
     ]
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
+    "objectID": "parts/HTML/elements.html#comment",
+    "href": "parts/HTML/elements.html#comment",
+    "title": "تگ‌ها",
     "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. (USA) 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "&lt;!--\nfunction displayMsg() {\n  alert(\"Hello World!\")\n}\n//\n--&gt;",
     "crumbs": [
-      "References"
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#doctype",
+    "href": "parts/HTML/elements.html#doctype",
+    "title": "تگ‌ها",
+    "section": "doctype",
+    "text": "doctype\nیک دستورالعمل برای مشخص کردن نسخه ی یک صفحه یا فایل HTML است.دستورالعمل Doctype مخفف Document Type بوده و در واقع این تگ نوع سند را به مرورگر ها معرفی می کند.یعنی به مرورگر ها مختلفی مثل کروم، فایرفاکس و… می فهماند صفحه وبی که در حال خواندن و نمایش آن هستند یک نوع سند HTML یا XHTML است.\nمثلا تگ aside در نسخه های پایین تر از HTML5 تعریف نشده است. یا تگ‌های acronym و applet در HTML5 تعریف نشده‌اند. کنسرسیوم جهانی وب یعنی w3c، استاندارد های مختلفی از زبان پایه ی وب یعنی HTML را ارائه نموده که هر کدام از آنها در مقایسه با هم هرچند اندک دارای تفاوت هایی هستند. این موضوع سبب می‌شود که مرورگر های وب، در برخورد با صفحات مختلف نتوانند در حالت عادی، استاندارد صحیح را شناسایی کنند و لذا به جای پردازش متناسب با استاندارد اصلی، عملیات پیش فرض خود را برای نمایش صفحه انجام می‌دهند که این موضوع ممکن است با آنچه مورد نظر شما بوده باشد، فرق کند و یا از مرورگری به مرورگر دیگر، صفحات شما به چند شکل مختلف پردازش شوند. لذا برای جلوگیری از بروز چنین مشکلاتی، از دستور راهنمای DOCTYPE استفاده می‌شود تا نوع نسخه HTML استفاده شده را برای مرورگر مشخص کند. کنسرسیوم جهانی وب (W3C) نسب به استفاده از این کد توصیه اکید دارد. مخصوصا در صفحاتی که از نسخه HTML 4.01 یا XHTML 1.0 استفاده می کنند. لذا به خاطر رعایت استانداردهای توصیه شده W3C می توان گفت که استفاده از آن تقریبا الزامی است، در غیر این صورت علاوه بر اینکه ممکن است صفحات، به درستی در مرورگرهای مختلف نمایش داده نشوند، از نظر اعتبار سنجی (Validation) نیز معتبر نیستند، که این امر در امتیاز و رتبه سایت یا وبلاگ در موتورهای جستجو تاثیر منفی خواهد داشت.\n&lt;!DOCTYPE html&gt;\nبه مرورگر و موتور جستجو اعلام می کند که سایت از html5 استفاده می کند.",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#html",
+    "href": "parts/HTML/elements.html#html",
+    "title": "تگ‌ها",
+    "section": "html",
+    "text": "html\nبیانگر ریشه اصلی فایل html است.همه تگ ها غیر از تگ DOCTYPE در این تگ قرار می گیرند. خاصیت و ویژگی lang در آن درج می‌شود و بیان می کند زیان سایت چیست. که این اعلان برای مرورگر و موتور های جستجو اهمیت دارد.",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#head",
+    "href": "parts/HTML/elements.html#head",
+    "title": "تگ‌ها",
+    "section": "head",
+    "text": "head\nحاوی اطلاعات metadata 2 ی سایت است و بین تگ های html و body قرار میگیرد و اطلاعات آن در سایت نمایش داده نمی‌شود. تگ هایی که در آن استفاده می شوند:\n\n&lt;title&gt;، &lt;style&gt;، &lt;base&gt;، &lt;link&gt;، &lt;meta&gt;، &lt;script&gt;، &lt;noscript&gt;.\n\n\ntitle\nعنوان صفحه که روی سربرگ مرورگر نیز نمایش داده می‌شود.در مبحث SEO3 این عنوان اهمیت زیادی دارد و در تعیین چیدمان نتایج تولید شده توسط موتورهای جستجو موثر است و هنگام نمایش سطر با همین عنوان نمایش داده می‌شود. وقنی سایت به favorite bar کاربر اضافه می‌شود برای نام پیش فرض از آن استفاده می‌شود. توصیه می‌شود بیش از یک یا دو کلمه برای عنوان استفاده کنید.\n&lt;title&gt;عنوان صفحه&lt;/title&gt;\nموتورهای جستجو بین ۵۰ تا ۶۰ کاراکتر عنوان را نمایش خواهند داد. عنوانی طولانی تر این مقدار انتخاب نکنید. عنوان را فقط رشته ای از حروف نتخاب نکنید چون باعث افت در موقعیت سایت در نتایج جستجوها خواهد شد\n\n\nbase\nعبارتی که در آن قرار می گیرد پایه همه مسیرهای ناکامل موجود در سند خواهد شد. مثلا:\n&lt;head&gt;\n  &lt;base href=\"https://www.w3schools.com/\" target=\"_blank\"&gt;\n&lt;/head&gt;\n\n&lt;body&gt;\n&lt;img src=\"images/stickman.gif\" width=\"24\" height=\"39\" alt=\"Stickman\"&gt;\n&lt;a href=\"tags/tag_base.asp\"&gt;HTML base Tag&lt;/a&gt;\n&lt;/body&gt;\nتصویر از مسیر زیر بارگذاری خواهد شد:\n\nhttps://www.w3schools.com/images/stickman.gif\n\nاگر تگ base اعلان نشده باشد مسیر پیش فرض پوشه ای است که فایل html در آن قرار گرفته است.\n\n\nlink\nیک تگ خالی است و فقط شامل خاصیت است.باعث برقراری ارتباط بین سند جاری با یک سند خارجی خواهد شد. خاصیت های آن:\n\n\n\n\n\n\n\nProperty\ndescription\n\n\n\n\nCrossOrigin\nمشخص می کند با درخواست های CORS چگونه برخورد شود.\n\n\nrel=“icon”\nمقدار icon یا favicon کمک می کند آیکون سایت که در سربرگ مرورگر نمایش داده می‌شود و اگر کاربر سایت را به favorite اضافه کند در نوار علایق با این آیکون نمایش داده می‌شود.مقدار apple-touch-icon کمک می کند در صورتی که در سیستم های iOS سایت add to desktop شد این امکان را داشته باشیم که آیکونی با رزولوشن بالاتری برای آن در نظر بگیریم تا در کنار بقیه آیکون های دسکتاپ شمایل بهتری داشته باشد\n\n\nrel=“stylesheet”\nحاوی فایل css برای قالب بندی سایت است.\n\n\nrel=“preload”\nاعلام می کند مرورگر باید قبل از نمایش سایت این اطلاعات را دریافت کند و در cache نگهداری کند\n\n\nType\nوقتی rel=“Stylesheet” باشد مقدار type را برابر text/css قرار می دهیم.\n\n\n\nمثال:\n&lt;link rel=\"icon\" href=\"/favicon.ico\" type=\"image/x-icon\"&gt;\n&lt;link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\"&gt;\n\n&lt;link rel=\"preload\" href=\"style.css\" as=\"style\" /&gt;\n&lt;link rel=\"preload\" href=\"main.js\" as=\"script\" /&gt;\n\n\nMeta\nمعمولا از آن برای اعلان کاراکترها استفاده می کنیم:\n&lt;meta charset=\"utf-8\" /&gt;\nکد فوق در HTML 4 به شکل زیر نوشته می شد:\n&lt;meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"&gt;\nهمچنین برای مباحث SEO سایت می توان از این تگ با کلید واژه content برای اعلام کلمات کلیدی مرتبط با محتوا سایت استفاده کرد.\n&lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\nتگ فوق به responsive شدن سایت و نمایش صحیح آن در اندازه های مختلف صفحه نمایش از قبیل تبلت و گوشی موبایل و تلویزیون … کمک می کند.\nبا تگ زیر می توان نویسنده صفحه را اعلان کرد:\n&lt;meta name=\"author\" content=\"John Doe\"&gt;\nبا تگ زیر می توان کلمات کلیدی سایت را به موتورهای جستجو اعلان کرد:\n&lt;meta name=\"keywords\" content=\"HTML, CSS, JavaScript\"&gt;\nتگ زیر توضیحی درباره چیستی سایت ارایه می کند:\n&lt;meta name=\"description\" content=\"Free Web tutorials\"&gt;\nخاصیت دیگری به اسم http-equiv وجود دارد که کارکردهای خاصی دارد:\n&lt;meta http-equiv=\"refresh\" content=\"30\"&gt;\nکد فوق باعث می‌شود سایت هر ۳۰ ثانیه یک بار به طور خودکار refresh شود.اگر بعد از ۳۰ یک سمی کالمن بگذاریم و بعد از آن آدرس یک سایت را بنویسیم بعد از سپری شدن مدت مشخص شده کاربر به سایت تعیین شده هدایت خواهد شد:\n&lt;meta http-equiv=\"refresh\" content=\"30;URL='http://test.com/'\" /&gt;\nاز خاصیت زیر برای کنترل رفتار مرورگر در cache کردن محتویات قابل ذخیره سازی نظیر تصاویر می توان استفاده کرد که چند حالت دارد:\n&lt;meta http-equiv=\"Cache-control\" content=\"public\"&gt;\n&lt;meta http-equiv=\"Cache-control\" content=\"private\"&gt;\n&lt;meta http-equiv=\"Cache-control\" content=\"no-cache\"&gt;\n&lt;meta http-equiv=\"Cache-control\" content=\"no-store\"&gt;\nپس از قرار دادن مقدار cash-control در مقابل ویژگی http-equiv باید در مقابل ویژگی content از مقدار:\n\npublic (جهت استفاده از cash به اشتراک گذاری شده عمومی)\nprivate (جهت استفاده از cash به اشتراک گذاری شده خصوصی)\nno-cash (جهت عدم استفاده از cash)\nno-store (جهت استفاده از cash و عدم ذخیره سازی توسط cash) استفاده نماییم.\n\nبه کمک خاصیت Set-Cookie برای http-equiv می توانیم اطلاعاتی از بازدید کننده را ذخیره کنیم مشروط به اینکه از قالب زیر استفاده کنیم:\n\nCONTENT=”name=data; path=path; expires=Day, DD-MMM-YY HH:MM:SS ZON”\n\nمثلا:\n&lt;meta http-equiv=\"Set-Cookie\" content=\"ACCOUNT=9983373;\n   path=/; expires=Thursday, 20-May-09 00:15:00 GMT\"&gt;",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#body",
+    "href": "parts/HTML/elements.html#body",
+    "title": "تگ‌ها",
+    "section": "Body",
+    "text": "Body\nبدنه اصلی سایت در این تگ قرار می گیرد.هر سند html می تواند حاوی تنها یک تگ body باشد.",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#a",
+    "href": "parts/HTML/elements.html#a",
+    "title": "تگ‌ها",
+    "section": "a",
+    "text": "a\nAnchor برای ایجاد یک hyperlink استفاده می‌شود تا کاربر با کلیک روی آن به سایت دیگری منتقل شود یا به قسمت دیگری از صفحه هدایت شود.مقصد به کمک خاصیت href مشخص می‌شود.\n&lt;a href=\"https://www.w3schools.com\"&gt;Visit W3Schools.com!&lt;/a&gt;\nخاصیت کاربردی دیگر این تگ target است که مشخص می کند مقصد در همان صفحه باز شود یا در سربرگ جدیدی از مرورگر باز شود مقدار آن می توانند یکی از اینها باشد:\n_blank _parent _self _top\nکد زیر مقصد را در سربرگ جدیدی باز می کند:\n&lt;a href=\"https://www.w3schools.com\" target=\"_blank\"&gt;Visit W3Schools.com!&lt;/a&gt;\n\nVisit W3Schools.com!\n\nدر صورتی که مقصد در همان سایت باشد از # استفاده می کنیم:\n&lt;a href=\"#section2\"&gt;Go to Section 2&lt;/a&gt;\n&lt;p&gt;In my younger and more vulnerable years&lt;/p&gt;\n&lt;h2 id=\"section2\"&gt;Section 2&lt;/h2&gt;\n&lt;p&gt;In my younger and more vulnerable years&lt;/p&gt;\n#می تواند به ID یکی از المنتهای صفحه اشاره کند. اگر # خالی استفاده کنیم به سر صفحه منتقل می شویم.\nمی توان برای تماس تلفنی از طریق نرم افزار های VoIP روی سیستم بازدید کننده نیز از Anchor استفاده کرد:\n&lt;a href=\"tel:+982191000000\"&gt;1000000&lt;/a&gt;\n\n1000000\n\nمی توان برای ارسال ایمیل نیز از آن استفاده کرد:\n&lt;a href=\"mailto:mjid.ahmadi@gmail.com?subject=Hi Majid&body=Hello dear, How are you following table demonstrates preprices we can deal\"&gt;Send Email to Majid&lt;/a&gt;\n\nSend Email to Majid",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#h",
+    "href": "parts/HTML/elements.html#h",
+    "title": "تگ‌ها",
+    "section": "h",
+    "text": "h\nاز h1 تا h6 برای تعریف heading یا سرفصل برای متن استفاده می‌شود.\n&lt;h1&gt;عنوان اصلی سطح ۱ - بزرگترین تیتر&lt;/h1&gt;\n&lt;h2&gt;عنوان فرعی سطح ۲ - سرفصل‌های اصلی&lt;/h2&gt;\n&lt;h3&gt;عنوان سطح ۳ - زیرسرفصل‌ها&lt;/h3&gt;\n&lt;h4&gt;عنوان سطح ۴ - جزئیات بیشتر&lt;/h4&gt;\n&lt;h5&gt;عنوان سطح ۵ - توضیحات تخصصی&lt;/h5&gt;\n&lt;h6&gt;عنوان سطح ۶ - کوچکترین تیتر&lt;/h6&gt;\n\n\nعنوان اصلی سطح ۱ - بزرگترین تیتر\n\n\nعنوان فرعی سطح ۲ - سرفصل‌های اصلی\n\n\nعنوان سطح ۳ - زیرسرفصل‌ها\n\n\nعنوان سطح ۴ - جزئیات بیشتر\n\n\nعنوان سطح ۵ - توضیحات تخصصی\n\n\nعنوان سطح ۶ - کوچکترین تیتر\n\n\nنکات مهم سئو (SEO) و دسترسی‌پذیری:\n\nسلسله‌مراتب (Hierarchy): ترتیب منطقی را رعایت کنید (h1 بزرگترین و h6 کوچکترین).\nتعداد h1: در هر صفحه فقط یک &lt;h1&gt; داشته باشید (برای عنوان اصلی).\nاز پرش (Skip): از h1 به h4 نپرید؛ ترتیب را رعایت کنید.\nکاربری: از h فقط برای تیترها استفاده کنید، نه برای بزرگ کردن متن!",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#p",
+    "href": "parts/HTML/elements.html#p",
+    "title": "تگ‌ها",
+    "section": "p",
+    "text": "p\nبرای تعریف پاراگراف جدید استفاده می‌شود. مرورگر به طور خودکار قبل و بعد از این تگ یک خط خالی نمایش خواهد داد.",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#div",
+    "href": "parts/HTML/elements.html#div",
+    "title": "تگ‌ها",
+    "section": "div",
+    "text": "div\nمخفف division برای بخش بندی صفحه سایت و به عنوان کانتینری برای اجزای سایت استفاده می‌شود تا بتوان روی آن محتویات از طریق style یا جاوا اسکریپت اعمال خاصی انجام داد. مثال غیر کاربردی(جلوتر درباره بخش بندی اصولی صحبت خواهیم کرد):\n\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"fa\"&gt;\n \n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Layout&lt;/title&gt;\n \n    &lt;style&gt;\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n \n        .container {\n            width: 100%;\n            min-height: 100vh;\n        }\n \n        /* Header */\n        .header {\n            height: 100px;\n            background: #4e8fe6;\n        }\n \n        /* Main Section */\n        .main {\n            display: flex;\n            min-height: 500px;\n        }\n \n        .aside {\n            width: 25%;\n            background: #f0b64b;\n        }\n \n        .content {\n            flex: 1;\n            background: #ead846;\n        }\n \n        /* Footer */\n        .footer {\n            height: 100px;\n            background: #f25a5a;\n        }\n \n        .header,\n        .aside,\n        .content,\n        .footer {\n            color: white;\n            font-weight: bold;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-size: 42px;\n        }\n    &lt;/style&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;div class=\"container\"&gt;\n        &lt;div class=\"header\"&gt;\n            header\n        &lt;/div&gt;\n        &lt;div class=\"main\"&gt;\n            &lt;div class=\"aside\"&gt;\n                aside\n            &lt;/div&gt;\n            &lt;div class=\"content\"&gt;\n                content\n            &lt;/div&gt;\n        &lt;/div&gt;\n        &lt;div class=\"footer\"&gt;\n            footer\n        &lt;/div&gt;\n    &lt;/div&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#تگ-های-مفهومی",
+    "href": "parts/HTML/elements.html#تگ-های-مفهومی",
+    "title": "تگ‌ها",
+    "section": "تگ های مفهومی",
+    "text": "تگ های مفهومی\nطراحان سایت و برنامه نویسان صفحه را به کمک تگ های header و main و footer به چند بخش تقسیم می کنند و هر بخش را به کمک تگ section به چند زیر بخش. این tag ها مثل Div کاربرد container بودن هم دارند. مثل Div هم Block-level هستند. تفاوت آنها این است که Div برای ایجاد یک container والد که دارای چند فرزند است ایجاد می‌شود ولی این تگ ها برای جدا کردن بخش های مفهومی سایت استفاده می شوند که برای موتورهای جستجو و کاربران معنی 4 دارند. Screen reader ها هم تفسیر متفاوتی از این دو دارند.\n&lt;section&gt;\n    &lt;h2&gt;محصولات&lt;/h2&gt;\n    ...\n&lt;/section&gt;\n\nلیست تگهای مفهومی:\n\n\n\n\n\n\n\ntag\ndescription\n\n\n\n\nheader\nسرآمد هر بخش\n\n\nnav\nبرای منوها و ناوبری5 در سایت استفاده می‌شود.\n\n\nmain\nبدنه اصلی سایت\n\n\naside\nنوارهای چپ و راست بدنه اصلی\n\n\nsection\nبرای بخش بدنی هر یک از تگ های مفهومی دیگر استفاده می‌شود\n\n\narticle\nبرای نمایش قسمت هایی که ممکن است در جاهای مختلف سایت نمایش داده شوند مثل پست های وبلاگ یا انجمن یا اخبار\n\n\nfooter\nبخش پایینی سایت",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#ol-ul-li",
+    "href": "parts/HTML/elements.html#ol-ul-li",
+    "title": "تگ‌ها",
+    "section": "ol-ul-li",
+    "text": "ol-ul-li\nمخفف unordered list یعنی لیست بدون شماره از این تگ برای ایجاد لیست استفاده می‌شود. با تگ li اجزای این لیست را می توان اضافه کرد. برای لیست های شماره دار از تگ ol استفاده می‌شود. برای اجزایی مثل آیتم های لیست موجود در منوی سایت از ul استفاده می‌شود.\n&lt;ol&gt;\n  &lt;li&gt;Coffee&lt;/li&gt;\n  &lt;li&gt;Tea&lt;/li&gt;\n  &lt;li&gt;Milk&lt;/li&gt;\n&lt;/ol&gt;\n\n\n\nCoffee\n\n\nTea\n\n\nMilk\n\n\n\n&lt;ul&gt;\n  &lt;li&gt;Coffee&lt;/li&gt;\n  &lt;li&gt;Tea&lt;/li&gt;\n  &lt;li&gt;Milk&lt;/li&gt;\n&lt;/ul&gt;\n\n\n\nCoffee\n\n\nTea\n\n\nMilk\n\n\n\nبه کمک شبه المان ها می‌شود تغییراتی در آنها داد.\nتوسط خاصیت های مثل padding می توان فاصله آیتم ها از هم را تنظیم کرد.\nاز لیست ها برای ساخت منوهای سایت نیز می توان استفاده کرد.معمولا در ساخت منو ها خاصیت list-style-type را روی none قرار می‌دهند.\nli {\n    list-style: none;\n    display: inline;\n}\n\nli:hover {\n    background-color: orange;\n    cursor: pointer;\n}\n\nul {\n    background-color: yellow;\n    padding: 0;\n}\n\n\n&lt;ul&gt;\n   &lt;li&gt;Home&lt;/li&gt;\n   &lt;li&gt;News&lt;/li&gt;\n   &lt;li&gt;Blog&lt;/li&gt;\n   &lt;li style=\"float: right;\"&gt;About&lt;/li&gt;\n&lt;/ul&gt;\n\nدر کد بالا اگر خاصیت display را برابر با block کنیم منو تبدیل به منوی عموی خواهد شد که در پنل سمت جپ سایت ها کاربرد دارد.\nمقادیر دیگری که خاصیت list-style می تواند داشته باشد:\n\nDisc\nCircle\nSquare\nLower-alpha\nLower-latin\nLower-roman",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#table",
+    "href": "parts/HTML/elements.html#table",
+    "title": "تگ‌ها",
+    "section": "table",
+    "text": "table\nبرای رسم جدول استفاده می‌شود.هر جدول دو نوع سلول دارد data و header که با دو تگ &lt;td&gt; برای table data و &lt;th&gt; برای table header مشخص می شوند. این دو نوع سلول باید در یک ردیف که با &lt;tr&gt; به معنی table row مشخص می‌شود قرار گیرند.\n&lt;table&gt;\n  &lt;tr&gt;\n    &lt;th&gt;Name&lt;/th&gt;\n    &lt;th&gt;Email&lt;/th&gt;\n    &lt;th colspan=\"2\"&gt;Phone&lt;/th&gt;    \n  &lt;/tr&gt;\n  &lt;tr&gt;\n    &lt;td&gt;John Doe&lt;/td&gt;\n    &lt;td&gt;john.doe@example.com&lt;/td&gt;    \n    &lt;td&gt;123-45-678&lt;/td&gt;\n    &lt;td&gt;212-00-546&lt;/td&gt;    \n  &lt;/tr&gt;\n&lt;/table&gt;\nکه خروجی آن به شکل زیر است:\n\ncolspan (مخفف Column Span) به سلول می‌گوید که چند ستون را در عرض خودش پوشش دهد (اشغال کند). به عبارت دیگر، یک سلول را در چندین ستون پخش می‌کند.\n\nمقدار پیش‌فرض: 1 (یعنی سلول فقط یک ستون را اشغال می‌کند)\nمقدار مجاز: هر عدد صحیح مثبت (مثلاً 2، 3، 5 و …)\n\n&lt;table border=\"1\"&gt;\n    &lt;tbody&gt;\n        &lt;tr&gt;\n            &lt;td&gt;A&lt;/td&gt;\n            &lt;td&gt;B&lt;/td&gt;\n            &lt;td&gt;C&lt;/td&gt;\n        &lt;/tr&gt;\n\n\n        &lt;tr&gt;\n            &lt;td colspan=\"2\"&gt;D&lt;/td&gt;\n            &lt;td&gt;E&lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n            &lt;td&gt;F&lt;/td&gt;\n            &lt;td colspan=\"2\"&gt;G&lt;/td&gt;\n        &lt;/tr&gt;\n    &lt;/tbody&gt;\n&lt;/table&gt;\n\n\n\nتصویر 7\n\n\nبه هر یک از سلول ها یا به کل جدول می توان یک Style نسبت داد. خاصیتی به نام border-collapse داریم که باعث می‌شود border های سلول ها به هم بچسبند.\n\n\n\nتصویر 8\n\n\nبه کمک شبه کلاس‌ها می توان برای ردیف های even یا odd استایل خاصی را اعمال کرد.این کار به کمک متد nth-child انجام می‌شود:\ntr:nth-child(even){\n    background-color:silver\n}\n\n\n\nتصویر 9\n\n\nاگر به جای even بنویسیم 3n+1 به شکل زیر اعمال خواهد شد:\n\n\n\nتصویر 10\n\n\nبرای جداول بزرگ توصیه می‌شود برای اینکه در پرینت صفحات و اسکرول کردن صفحات کاربر راحت باشد سه بخش جدول (سرآمد-بدنه - پا جدول) را در سه تگ زیر قرار داد:\n&lt;thead&gt;&lt;/thead&gt;\n&lt;tbody&gt;&lt;/tbody&gt;\n&lt;tfoot&gt;&lt;/tfoot&gt;\n\n\n\nتصویر 11\n\n\nوقتی فایل بیش از یک صفحه باشد:\n\n\n\nتصویر 12\n\n\nدر bootstrap کلاس های table-striped و table-bordered برای شکل دهی سریع به جداول پرکاربرد هستند.\n&lt;div class=\"container\"&gt;\n     &lt;table&gt;&lt;/table&gt;\n     &lt;thead&gt;&lt;/thead&gt;\n     &lt;tbody&gt;&lt;/tbody&gt;\n     &lt;tfoot&gt;&lt;/tfoot&gt;\n\n\n     &lt;table class=\"table caption-top table-bordered\"&gt;\n       &lt;caption&gt;\n         List of users\n       &lt;/caption&gt;\n       &lt;thead&gt;\n         &lt;tr&gt;\n           &lt;th scope=\"col\"&gt;Name&lt;/th&gt;\n           &lt;th&gt;Email&lt;/th&gt;\n           &lt;th colspan=\"2\"&gt;Phone&lt;/th&gt;\n         &lt;/tr&gt;\n       &lt;/thead&gt;\n       &lt;tbody&gt;\n         &lt;tr&gt;\n           &lt;td&gt;John Doe&lt;/td&gt;\n           &lt;td&gt;john.doe@example.com&lt;/td&gt;\n           &lt;td&gt;123-45-678&lt;/td&gt;\n           &lt;td&gt;212-00-546&lt;/td&gt;\n         &lt;/tr&gt;\n       &lt;/tbody&gt;\n       &lt;tfoot&gt;\n         &lt;tr&gt;\n           &lt;td colspan=\"4\"&gt;Address:here&lt;/td&gt;\n         &lt;/tr&gt;\n       &lt;/tfoot&gt;\n     &lt;/table&gt;\n   &lt;/div&gt;\nبا تگ colgroup می توان چند ستون را ادغام کرد. در کد از colgroup برای ادغام با هدف اعمال کلاس مشترک روی دو ستون آخر استفاده شده:\n&lt;table&gt;\n    &lt;caption&gt;\n        Personal weekly activities\n    &lt;/caption&gt;\n    &lt;colgroup span=\"5\" class=\"weekdays\"&gt;&lt;/colgroup&gt;\n    &lt;colgroup span=\"2\" class=\"weekend\"&gt;&lt;/colgroup&gt;\n    &lt;thead&gt;\n        &lt;tr&gt;\n            &lt;th&gt;Mon&lt;/th&gt;\n            &lt;th&gt;Tue&lt;/th&gt;\n            &lt;th&gt;Wed&lt;/th&gt;\n            &lt;th&gt;Thu&lt;/th&gt;\n            &lt;th&gt;Fri&lt;/th&gt;\n            &lt;th&gt;Sat&lt;/th&gt;\n            &lt;th&gt;Sun&lt;/th&gt;\n        &lt;/tr&gt;\n    &lt;/thead&gt;\n    &lt;tbody&gt;\n        &lt;tr&gt;\n            &lt;td&gt;Clean room&lt;/td&gt;\n            &lt;td&gt;Football training&lt;/td&gt;\n            &lt;td&gt;Dance Course&lt;/td&gt;\n            &lt;td&gt;History Class&lt;/td&gt;\n            &lt;td&gt;Buy drinks&lt;/td&gt;\n            &lt;td&gt;Study hour&lt;/td&gt;\n            &lt;td&gt;Free time&lt;/td&gt;\n        &lt;/tr&gt;\n        &lt;tr&gt;\n            &lt;td&gt;Yoga&lt;/td&gt;\n            &lt;td&gt;Chess Club&lt;/td&gt;\n            &lt;td&gt;Meet friends&lt;/td&gt;\n            &lt;td&gt;Gymnastics&lt;/td&gt;\n            &lt;td&gt;Birthday party&lt;/td&gt;\n            &lt;td&gt;Fishing trip&lt;/td&gt;\n            &lt;td&gt;Free time&lt;/td&gt;\n        &lt;/tr&gt;\n    &lt;/tbody&gt;\n&lt;/table&gt;\ntable {\n    border-collapse: collapse;\n    border: 2px solid rgb(140 140 140);\n}\n\n\ncaption {\n    caption-side: bottom;\n    padding: 10px;\n}\n\n\nth,\ntd {\n    border: 1px solid rgb(160 160 160);\n    padding: 8px 6px;\n    text-align: center;\n}\n\n\n.weekdays {\n    background-color: #d7d9f2;\n}\n\n\n.weekend {\n    background-color: #ffe8d4;\n}\n\n\n\nتصویر 13\n\n\nخصوصیت span در &lt;colgroup&gt; یک عدد صحیح مثبت دریافت می‌کند که نشان‌دهنده تعداد ستون‌هایی است که آن گروه شامل می‌شود . مثلاً\n&lt;colgroup span=\"5\" class=\"weekdays\"&gt;&lt;/colgroup&gt;\n&lt;colgroup span=\"2\" class=\"weekend\"&gt;&lt;/colgroup&gt;\nیعنی یک گروه شامل 5 ستون (روزهای هفته) و یک گروه شامل 2 ستون (تعطیلات آخر هفته).",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#dl-dt-dd",
+    "href": "parts/HTML/elements.html#dl-dt-dd",
+    "title": "تگ‌ها",
+    "section": "dl dt dd",
+    "text": "dl dt dd\ndl مخفف description list به معنی لیست توضیخات است. به همراه dt به معنی definition term و dd به معنی difinition description برای درج توضیحات درباره هر آیتم استفاده می‌شود.\n&lt;dl&gt;\n    &lt;dt&gt;Coffee&lt;/dt&gt;\n    &lt;dd&gt;Black hot drink&lt;/dd&gt;\n    &lt;dt&gt;Milk&lt;/dt&gt;\n    &lt;dd&gt;White cold drink&lt;/dd&gt;\n&lt;/dl&gt;\n\n\n\nCoffee\n\n\nBlack hot drink\n\n\nMilk\n\n\nWhite cold drink\n\n\n\nبا استایل دهی به آن می توان مفاهیم را بهتر برای بازدید کننده تشریح کرد:\n    dt {\n        font-weight: bold;\n    }\n\n\n    dl,\n    dd {\n        font-size: 0.9rem;\n    }\n\n\n    dd {\n        margin-bottom: 1em;\n    }\n&lt;dl&gt;\n    &lt;dt&gt;Beast of Bodmin&lt;/dt&gt;\n    &lt;dd&gt;A large feline inhabiting Bodmin Moor.&lt;/dd&gt;\n\n\n    &lt;dt&gt;Morgawr&lt;/dt&gt;\n    &lt;dd&gt;A sea serpent.&lt;/dd&gt;\n\n\n    &lt;dt&gt;Owlman&lt;/dt&gt;\n    &lt;dd&gt;A giant owl-like creature.&lt;/dd&gt;\n&lt;/dl&gt;\n\n\n\nBeast of Bodmin\n\n\nA large feline inhabiting Bodmin Moor.\n\n\nMorgawr\n\n\nA sea serpent.\n\n\nOwlman\n\n\nA giant owl-like creature.",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#text-formatting",
+    "href": "parts/HTML/elements.html#text-formatting",
+    "title": "تگ‌ها",
+    "section": "Text formatting",
+    "text": "Text formatting\nاین تگ‌ها فقط ظاهر متن رو تغییر میدهند و معنای خاصی ندارند.\n\n\n\n\n\n\n\n\n\nتگ\nکاربرد \nمثال\nنتیجه\n\n\n\n\n \nمتن پررنگ (Bold)\nمتن پررنگ\nمتن پررنگ\n\n\n \nمتن کج (Italic)\nمتن کج\nمتن کج\n\n\n \nمتن زیرخط‌دار (Underline)\nمتن زیرخط‌دار\nمتن زیرخط‌دار\n\n\n \nمتن خط‌خورده (Strikethrough)\nمتن خط‌خورده\nمتن خط‌خورده\n\n\n \nمتن کوچک\nمتن کوچک\nمتن کوچک",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#phrase-tags",
+    "href": "parts/HTML/elements.html#phrase-tags",
+    "title": "تگ‌ها",
+    "section": "Phrase tags",
+    "text": "Phrase tags\nتگ های عبارتی HTML برای اهداف خاصی طراحی شده اند و قسمتی از متن را معنادار تعریف می کنند. مثلا معنی خاصی برای یک موتور جستجو یا یک موتور متن خوان دارند.\n\n\n\n\n\n\n\n\n\n\nتگ \nکاربرد \nمثال \nنتیجه \n\n\n\n\n&lt;strong&gt;\nمتن بسیار مهم (اهمیت بالا)\n&lt;strong&gt;مهم&lt;/strong&gt;\nمهم\n\n\n&lt;em&gt;\nتأکید (Emphasis)\n&lt;em&gt;تأکید&lt;/em&gt;\nتأکید\n\n\n&lt;mark&gt;\nمتن هایلایت شده\n&lt;mark&gt;هایلایت&lt;/mark&gt;\nهایلایت\n\n\n&lt;del&gt;\nمتن حذف شده\n&lt;del&gt;حذف شده&lt;/del&gt;\nحذف شده\n\n\n&lt;ins&gt;\nمتن اضافه شده\n&lt;ins&gt;اضافه شده&lt;/ins&gt;\nاضافه شده\n\n\n&lt;sub&gt;\nزیرنویس (مثل H₂O)\nH&lt;sub&gt;2&lt;/sub&gt;O\nH2O\n\n\n&lt;sup&gt;\nبالانویس (مثل m²)\nm&lt;sup&gt;2&lt;/sup&gt;\nm2\n\n\n&lt;code&gt;\nکد کامپیوتر\n&lt;code&gt;let x = 10;&lt;/code&gt;\nlet x = 10;\n\n\n&lt;kbd&gt;\nورودی صفحه‌کلید\n&lt;kbd&gt;Ctrl+S&lt;/kbd&gt;\nCtrl+S\n\n\n&lt;samp&gt;\nخروجی برنامه\n&lt;samp&gt;Error 404&lt;/samp&gt;\nError 404\n\n\n&lt;var&gt;\nمتغیر ریاضی\n&lt;var&gt;x&lt;/var&gt; = 5\nx = 5\n\n\n&lt;abbr&gt;\nمخفف\n&lt;abbr title=\"HyperText Markup Language\"&gt;HTML&lt;/abbr&gt;\nHTML\n\n\n\n\n\nstrong\nتگ strong که در دسته ی تگ های عبارتی یا Phrase می باشد ، تگی است که با استفاده از آن میتوان یک متن / محتوا را به صورت مهم یا متنی که دارای ارزش محتوایی می باشد نشان داد.از نظر شمایل خروجی آن مثل تگ b که برای bold کردن متن استفاده می‌شود است ولی کارکرد متفاوت دیگری نیز دارد. زمانی که محتوای مهمی داریم و میخواهیم به موتورهای جستجو اعلام کنیم که به این محتوا یا کلمه کلیدی اهمیت ویژه ای بدهد از تگ strong استفاده می‌کنیم و زمانی که محتوای ما محتوای مهمی نیست و تنها می‌خواهیم آن را ضخیم کنیم از تگ b استفاده می‌کنیم.تگ strong در سئو سایت دارای اهمیت است.\n&lt;p&gt;\n  ... the most important rule, the rule you can never forget, no matter how much\n  he cries, no matter how much he begs:\n  &lt;strong&gt;never feed him after midnight&lt;/strong&gt;.\n&lt;/p&gt;\n\n\n… the most important rule, the rule you can never forget, no matter how much he cries, no matter how much he begs: never feed him after midnight.\n\n\n\n\ncode\nتگ code تگی است که ما با استفاده از آن میتوانیم یک تکه کد (معمولا کدهای کامپیوتری) را درون یک صفحه ی وب تعریف نماییم.\n&lt;p&gt;\n  The &lt;code&gt;push()&lt;/code&gt; method adds one or more elements to the end of an\n  array and returns the new length of the array.\n&lt;/p&gt;\n\n\nThe push() method adds one or more elements to the end of an array and returns the new length of the array.\n\n\nمی توان با استایل سفارشی کد ها را متمایز کرد.\n\n\npre6\nبرای نمایش متن ها دقیقا با همان حالت و فواصل استفاده می شود.\n    &lt;pre&gt;\nاین    متن    با    فاصله‌های    زیاد\n     و خط جدید\nنشان داده میشه\n&lt;/pre&gt;\n\nاین    متن    با    فاصله‌های    زیاد\n     و خط جدید\nنشان داده میشه\n\n\nمتن داخل &lt;pre&gt; 7 با فونت ثابت‌عرض (مثل Courier) نمایش داده میشود.\n&lt;code&gt; فقط برای نمایش تک‌خطی کد یا عبارت‌های کوتاه استفاده میشود و فاصله‌ها را حفظ نمیکند. نکته مهم:اگر داخل &lt;pre&gt; از کاراکترهای خاص مثل &lt; یا &gt; استفاده میکنید، حتماً باید از Entity Codes (مثل &lt; برای بسته و &gt; برای باز) استفاده کنید تا مرورگر اون‌ها رو به‌عنوان تگ HTML تفسیر نکنه.\n&lt;pre&gt;\n    &lt;code&gt;\nfunction hello() {\n    console.log(\"Hello World\");\n}\n    &lt;/code&gt;\n&lt;/pre&gt;\n\n&lt;pre&gt;\n    &lt;span class=\"code-slash fade-in-element\"&gt;TEST&lt;/span&gt;\n&lt;/pre&gt;\n\n&lt;pre&gt;\n    &lt;span class=\"code-slash fade-in-element\"&gt;TEST&lt;/span&gt;\n&lt;/pre&gt;\n\n    TEST\n\n    &lt;span class=\"code-slash fade-in-element\"&gt;TEST&lt;/span&gt;\n\n\nهمانطور که مشاهده می شود span اول توسط مرورگر به عنوان تگ span تفسیر شده است.\n\n\nvar\nتگ var یا Variable که در دسته ی تگ های عبارتی یا ( Phrase ) قرار دارد، تگی است که با استفاده از آن می توان متغیر ها را در یک صفحه وب تعریف و یا ایجاد نمود. اگر با زبان های برنامه نویسی آشنایی داشته باشید میدانید که متغیرها چه هستند، حال همان متغیرها را اگر بخواهیم در یک صفحه وب بگذاریم باید از تگ Var استفاده نماییم.\n&lt;p&gt;\n  The volume of a box is &lt;var&gt;l&lt;/var&gt; × &lt;var&gt;w&lt;/var&gt; × &lt;var&gt;h&lt;/var&gt;, where\n  &lt;var&gt;l&lt;/var&gt; represents the length, &lt;var&gt;w&lt;/var&gt; the width and\n  &lt;var&gt;h&lt;/var&gt; the height of the box.\n&lt;/p&gt;\n\n\nThe volume of a box is l × w × h, where l represents the length, w the width and h the height of the box.\n\n\n\n\nkbd\nتگ kbd که مخفف Keyboard Input می باشد تگی است که در دسته ی تگ های عبارتی یا Phrase می باشد ، با استفاده از آن میتوان یک ورودی صفحه کلید یا Keyboard Input را در یک صفحه وب قرار داد.\n&lt;p&gt;\n  Please press &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;R&lt;/kbd&gt; to re-render an\n  MDN page.\n&lt;/p&gt;\n\n\nPlease press Ctrl + Shift + R to re-render an MDN page.\n\n\nمرورگر و موتورهای جستجو متن درون آن را به عنوان ترکیبی از کلیدهای کیبورد درک خواهند کرد.\nkbd {\n    background-color: #123456;\n    padding:.1rem .6rem;\n    color: #fff;\n}\n&lt;p&gt;\n    Please press &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;R&lt;/kbd&gt; to re-render\n    page.\n&lt;/p&gt;\n\n\nPlease press Ctrl + Shift + R to re-render page.\n\n\n\n\nsamp\nتگ samp که مخفف Sample می باشد ، تگی است که در دسته ی تگ های عبارتی یا Phrase می باشد ، و با استفاده از آن می توان خروجی یک برنامه کامپیوتری را در یک صفحه وب قرار داد.\n&lt;p&gt;I was trying to boot my computer, but I got this hilarious message:&lt;/p&gt;\n\n&lt;p&gt;\n  &lt;samp&gt;Keyboard not found &lt;br /&gt;Press F1 to continue&lt;/samp&gt;\n&lt;/p&gt;\n\n\nI was trying to boot my computer, but I got this hilarious message:\n\n\nKeyboard not found Press F1 to continue\n\n\n\n\nabbr\nاز تگ &lt;abbr&gt; برای اختصار سازی 8 یک عبارت طولانی استفاده می‌شود.\n&lt;p&gt;\n    The &lt;abbr title=\"World Health Organization\"&gt;WHO&lt;/abbr&gt; was founded in 1948.\n&lt;/p&gt;\n\n\nThe WHO was founded in 1948.\n\n\n\n\nmark\nبرای برجسته و متمایز کردن قسمت خاصی از متن استفاده می‌شود.\n&lt;p&gt;Search results for \"salamander\":&lt;/p&gt;\n\n&lt;hr /&gt;\n\n&lt;p&gt;\n    Several species of &lt;mark&gt;salamander&lt;/mark&gt; inhabit the temperate rainforest of\n    the Pacific Northwest.\n&lt;/p&gt;\n\n&lt;p&gt;\n    Most &lt;mark&gt;salamander&lt;/mark&gt;s are nocturnal, and hunt for insects, worms, and\n    other small creatures.\n&lt;/p&gt;\n\n\nSearch results for “salamander”:\n\n\n\nSeveral species of salamander inhabit the temperate rainforest of the Pacific Northwest.\n\n\nMost salamanders are nocturnal, and hunt for insects, worms, and other small creatures.\n\n\n\n\ndfn\nاین امکان می دهد را به شما می دهد تا کلمه کلیدی محتوا را مشخص کنید.\n&lt;p&gt;\n  A &lt;dfn id=\"def-validator\"&gt;validator&lt;/dfn&gt; is a program that checks for syntax\n  errors in code or documents.\n&lt;/p&gt;\n\n\nA validator is a program that checks for syntax errors in code or documents.\n\n\n\n\nblockquote - cite - q\nاین تگ علاوه بر ظاهر، معنای معنایی (semantic) هم دارد و به مرورگرها، موتورهای جستجو و ابزارهای کمکی می‌گوید که این بخش یک نقل‌قول است.\n&lt;div&gt;\n  &lt;blockquote cite=\"https://www.huxley.net/bnw/four.html\"&gt;\n    &lt;p&gt;\n      Words can be like X-rays, if you use them properly—they'll go through\n      anything. You read and you're pierced.\n    &lt;/p&gt;\n  &lt;/blockquote&gt;\n  &lt;p&gt;—Aldous Huxley, &lt;cite&gt;Brave New World&lt;/cite&gt;&lt;/p&gt;\n&lt;/div&gt;\n\n\n\n\nWords can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.\n\n\n\n—Aldous Huxley, Brave New World\n\n\n\nویژگی cite به منبعی که از آن سایت نقل قول کرده ایم اشاره می کند. این آدرس به کاربر نمایش داده نمی شود اگر بخواهیم نمایش داده شود از تگ cite استفاده می کنیم:\nبرای نقل قول کوتاه از q استفاده می کنیم:\n&lt;p&gt;\n  When Dave asks HAL to open the pod bay door, HAL answers:\n  &lt;q\n    cite=\"https://www.imdb.com/title/tt0062622/quotes/?item=qt0396921&ref_=ext_shr_lnk\"&gt;\n    I'm sorry, Dave. I'm afraid I can't do that.\n  &lt;/q&gt;\n&lt;/p&gt;\n\n\nWhen Dave asks HAL to open the pod bay door, HAL answers:  I’m sorry, Dave. I’m afraid I can’t do that. \n\n\n\n\naddress\nاطلاعات تماس نویسنده ی محتوا را تعیین می کند.\n&lt;address&gt;\n   Written by &lt;a href=\"mailto:webmaster@example.com\"&gt;Jon Doe&lt;/a&gt;.&lt;br&gt; \n   Visit us at:&lt;br&gt;\n   Example.com&lt;br&gt;\n   Box 564, Disneyland&lt;br&gt;\n   USA\n&lt;/address&gt;\n\n\nWritten by Jon Doe. Visit us at: Example.com Box 564, Disneyland USA\n\n\n\n\nem\nتگ em که از کلمه Emphasized گرفته شده و در دسته ی تگ های عبارتی یا Phrase می باشد ، تگی است که با استفاده از آن می توان روی یک متن / کلمه تاکید کرد.موتورهای جستجوگر ( مثل گوگل ) به این تگ توجه می کنند، تگ i نیز در ظاهر شبیه به تگ em می باشد ولی فرق دارند، تگ i هیچ گونه تاکیدی روی متن ندارد و فقط متن رو شکسته یا ایتالیک می کند. همچنین screen reader ها با رسیدن به این تگ متن درون آن را با تاکید قرائت می کنند.\n&lt;p&gt;Get out of bed &lt;em&gt;now&lt;/em&gt;!&lt;/p&gt;\n\n&lt;p&gt;We &lt;em&gt;had&lt;/em&gt; to do something about it.&lt;/p&gt;\n\n&lt;p&gt;This is &lt;em&gt;not&lt;/em&gt; a drill!&lt;/p&gt;\n\n\nGet out of bed now!\n\n\nWe had to do something about it.\n\n\nThis is not a drill!",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#img",
+    "href": "parts/HTML/elements.html#img",
+    "title": "تگ‌ها",
+    "section": "img",
+    "text": "img\nبرای درج تصویر در سایت استفاده می‌شود.چون محتوایی درون خود ندارد، یک تگ تهی 9 محسوب می‌شود؛ یعنی تگ بسته (&lt;/img&gt;) ندارد.\n&lt;img src=\"/logo.png\" alt=\"لوگوی شرکت\"&gt;\nاگر تصویر لود نشود یا کاربر از صفحه‌خوان استفاده کند، متن 10 alt نمایش داده یا خوانده می‌شود.\nتوصیه می شود در آدرس فایل های محلی حتما / قید شود تا اگر سایت روی سرور قرار گرفت مشکلی در یافتن فایل به وجود نیاید. این تگ خاصیتی به نام loading دارد که در حالت پیش فرض مقدار آن eager است. در صورتی که مقدار آن روی lazy تنظیم شود فقط تصاویری دانلود می‌شوند که در محدوده قابل رویت یعنی viewport قرار دارند.\nخاصیت title باعث می شود در صورتی که کاربر ماوس را روی تصویر نگه داشت یک tooltip نمایش داده شود.\n&lt;img src=\"..\" title=\"strawberry\"&gt;\n\nمی توان به وسیله srcset با توجه به سایز صفحه نمایش و یا رزولوشن مشخص کرد کدام عکس باز شود.sizes به مرورگر می‌گوید که تصویر در چه اندازه‌ای (بر اساس عرض صفحه) نمایش داده می‌شود تا مرورگر بهترین عکس را از بین لیست srcset انتخاب کند.\nویژگی decoding به مرورگر می گوید که چگونه تصویر را رمز گشایی کند. مقدار async باعث بهبود سرعت می شود.\n&lt;img\n  src=\"image-fallback.jpg\"\n  srcset=\"image-small.jpg 480w, image-medium.jpg 768w, image-large.jpg 1200w\"\n  sizes=\"(max-width: 600px) 100vw, 50vw\"\n  alt=\"توضیح مفید و سئو شده درباره تصویر\"\n  width=\"800\"\n  height=\"600\"\n  loading=\"lazy\"\n  decoding=\"async\"\n&gt;",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#figure---figcaption",
+    "href": "parts/HTML/elements.html#figure---figcaption",
+    "title": "تگ‌ها",
+    "section": "figure - figcaption",
+    "text": "figure - figcaption\nعنصر &lt;figure&gt; در HTML نشان‌دهنده محتوای مستقلی است که احتمالاً دارای یک عنوان اختیاری است که با استفاده از عنصر &lt;figcaption&gt; مشخص می‌شود. شکل، عنوان آن و محتوای آن به عنوان یک واحد واحد ارجاع داده می‌شوند.\nfigure {\n  border: thin silver solid;\n  display: flex;\n  flex-flow: column;\n  padding: 5px;\n  max-width: 220px;\n  margin: auto;\n}\n\nimg {\n  max-width: 220px;\n  max-height: 150px;\n}\n\nfigcaption {\n  background-color: #222222;\n  color: white;\n  font: italic smaller sans-serif;\n  padding: 3px;\n  text-align: center;\n}\nمعمولاً یک &lt;figure&gt; یک تصویر، تصویرسازی، نمودار، قطعه کد و غیره است که در جریان اصلی یک سند به آن ارجاع داده می‌شود، اما می‌توان آن را بدون تأثیر بر جریان اصلی به بخش دیگری از سند یا به یک پیوست منتقل کرد.\nیک عنوان را می‌توان با قرار دادن یک &lt;figcaption&gt; درون عنصر &lt;figure&gt; (به عنوان اولین یا آخرین فرزند) به آن مرتبط کرد. اولین عنصر &lt;figcaption&gt; که در شکل یافت می‌شود، به عنوان عنوان شکل نمایش داده می‌شود.\n&lt;figcaption&gt; نام قابل دسترسی برای &lt;figure&gt; والد را فراهم می‌کند.",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#area",
+    "href": "parts/HTML/elements.html#area",
+    "title": "تگ‌ها",
+    "section": "area",
+    "text": "area\nبه کمک این تگ می توان محدوده های قابل کلیکی در یک تصویر به وجود آورد.\n&lt;map name=\"infographic\"&gt;\n  &lt;area\n    shape=\"poly\"\n    coords=\"129,0,260,95,129,138\"\n    href=\"https://developer.mozilla.org/docs/Web/HTTP\"\n    alt=\"HTTP\" /&gt;\n  &lt;area\n    shape=\"poly\"\n    coords=\"260,96,209,249,130,138\"\n    href=\"https://developer.mozilla.org/docs/Web/HTML\"\n    alt=\"HTML\" /&gt;\n  &lt;area\n    shape=\"poly\"\n    coords=\"209,249,49,249,130,139\"\n    href=\"https://developer.mozilla.org/docs/Web/JavaScript\"\n    alt=\"JavaScript\" /&gt;\n  &lt;area\n    shape=\"poly\"\n    coords=\"48,249,0,96,129,138\"\n    href=\"https://developer.mozilla.org/docs/Web/API\"\n    alt=\"Web APIs\" /&gt;\n  &lt;area\n    shape=\"poly\"\n    coords=\"0,95,128,0,128,137\"\n    href=\"https://developer.mozilla.org/docs/Web/CSS\"\n    alt=\"CSS\" /&gt;\n&lt;/map&gt;\n&lt;img\n  usemap=\"#infographic\"\n  src=\"/shared-assets/images/examples/mdn-info.png\"\n  alt=\"MDN infographic\" /&gt;\n\n&lt;/map&gt;\n\n\nhover mouse on image\n\n\n\n\n\n\n\n\n\n\nبرای shape می توان از مقدار poly برای ترسیم دقیق تر استفاده کرد.",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#audio",
+    "href": "parts/HTML/elements.html#audio",
+    "title": "تگ‌ها",
+    "section": "audio",
+    "text": "audio\nبرای درج پلیر صوتی در صفحه استفاده می‌شود.\n&lt;audio controls&gt;\n  &lt;source src=\"horse.ogg\" type=\"audio/ogg\"&gt;\n  &lt;source src=\"horse.mp3\" type=\"audio/mpeg\"&gt;\n  Your browser does not support the audio tag.\n&lt;/audio&gt;",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#video",
+    "href": "parts/HTML/elements.html#video",
+    "title": "تگ‌ها",
+    "section": "video",
+    "text": "video\nبرای نمایش پخش کننده فیلم:\n&lt;video width=\"320\" height=\"240\" controls&gt;\n   &lt;source src=\"movie.mp4\" type=\"video/mp4\"&gt;\n   &lt;source src=\"movie.ogg\" type=\"video/ogg\"&gt;\n   &lt;source src=\"movie.WebM\" type=\"video/webm\"&gt;\n   Your browser does not support the video tag.\n&lt;/video&gt;\nدرج باعث controls می‌شود کنترل کننده های فیلم در صفحه player نمایش داده شوند.Autoplay و muted و poster موارد دیگری است که می توان استفاده کرد. Poster درواقع cover فیلم قبل از شروع نمایش آن است. خاصیتی به نام preload می توان در این تگ استفاده کرد که مشخص می کند load ویدئو بعد از زدن دکمه play شروع شود یا همزمان با باز شدن سایت cache کردن فیلم آغاز شود.مقادیر آن:\n\nNone\nMetadata - download film preview metadata\nAuto\n\n&lt;video width=\"320\" height=\"240\" preload=”auto”&gt;\nاگر autoplay را فعال کرده باشید این خاصیت بی تاثیر خواهد بود. روش دیگر استفاده از iframe است:\n&lt;iframe width=\"420\" height=\"315\"\nsrc=\"https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1&loop=1&playlist=tgbNymZ7vqY&controls=0\"&gt;\n&lt;/iframe&gt;\nدر url فوق بعد از علامت ؟ پارامترهای زیر که بینشان & درج شده است استفاده شده اند:\n\n\nAutoplay (for start playing after page load. Not work on chromium browsers)\nLoop (for loop video after it ends)\nMute (for start playing muted)\nPlaylist (open specific playlist)\n\n\nمی توان پارامترهای زیر را نیز اضافه کرد:\n\nframeborder=0\ncc_lang_pref=fa\ncc_load_policy = 1\nFor Default caption",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#iframe",
+    "href": "parts/HTML/elements.html#iframe",
+    "title": "تگ‌ها",
+    "section": "iframe",
+    "text": "iframe",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
+    ]
+  },
+  {
+    "objectID": "parts/HTML/elements.html#footnotes",
+    "href": "parts/HTML/elements.html#footnotes",
+    "title": "تگ‌ها",
+    "section": "",
+    "text": "HyperText Markup Language↩︎\ndata about data↩︎\nsearch engine optimization↩︎\nSemantic↩︎\nnavigation↩︎\nPreformatted Text↩︎\nMonospace↩︎\nabbreviation↩︎\nVoid Element↩︎\nAlternative Text↩︎",
+    "crumbs": [
+      "HTML",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>تگ‌ها</span>"
     ]
   }
 ]

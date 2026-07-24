@@ -1,0 +1,137 @@
+html {
+    direction: rtl;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url("../fonts/Vazirmatn.ttf");
+
+}
+
+/* p * {
+
+} */
+
+body {
+    direction: rtl;
+    text-align: justify;
+    font-family: Vazirmatn, Tahoma, sans-serif;
+    font-size: 1rem;
+    line-height: 2;
+    /* font-variant-numeric: normal; */
+    /* show persian digits */
+    font-feature-settings: "ss01";
+
+}
+
+@media (max-width:760px) {
+
+    body,
+    .sidebar-menu-container {
+        font-size: .8em;
+    }
+
+}
+
+pre,
+code,
+.sourceCode {
+    direction: ltr;
+    text-align: left;
+    font-family: Consolas, "Courier New", monospace;
+}
+
+
+.example {
+    background: #f7f9fb;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+}
+
+.example::before {
+    content: "Example";
+    display: block;
+    font-weight: bold;
+    margin-bottom: .8rem;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+pre.html::before {
+    content: "</> HTML";
+    font-size: 0.7em;
+    margin-bottom: 1.5em;
+    display: block;
+}
+
+pre.css::before {
+    content: "</> CSS";
+    font-size: 0.7em;
+    margin-bottom: 1.5em;
+    display: block;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 70%;
+    height: auto;
+    margin-inline: auto;
+}
+
+figure {
+    max-width: 70%;
+    margin-inline: auto;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+figure figcaption {
+    text-align: center;
+}
+
+
+code {
+    border-radius: 3px;
+}
+
+.ltr {
+    direction: ltr;
+}
+
+
+
+.output {
+    position: relative;
+    border: 1px solid #999;
+    border-radius: .25rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.output::before {
+    content: "Output";
+    position: absolute;
+    top: -.65rem;
+    right: 1.5rem;
+    background: white;
+    border: 1px #999 solid;
+    border-radius: .25rem;
+    padding: .05rem 1rem;
+    letter-spacing: 10%;
+    color: gray;
+    font-size: .6rem;
+}
