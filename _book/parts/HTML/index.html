@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="مجید احمدی">
 
-<title>HTML - CSS از مبتدی تا حرفه‌ای</title>
+<title>مقدمه – HTML - CSS از مبتدی تا حرفه‌ای</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,27 +23,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./parts/HTML/index.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../parts/HTML/elements.html" rel="next">
+<link href="../../index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-9e3e5b9121e68b3f077afb32f2c64d95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -86,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">پیشگفتار</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../parts/HTML/index.html">HTML</a></li><li class="breadcrumb-item"><a href="../../parts/HTML/index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">مقدمه</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -101,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">HTML - CSS از مبتدی تا حرفه‌ای</a> 
+      <a href="../../">HTML - CSS از مبتدی تا حرفه‌ای</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -113,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">پیشگفتار</span></a>
   </div>
 </li>
@@ -128,13 +163,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./parts/HTML/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../parts/HTML/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">مقدمه</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./parts/HTML/elements.html" class="sidebar-item-text sidebar-link">
+  <a href="../../parts/HTML/elements.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">تگ‌ها</span></span></a>
   </div>
 </li>
@@ -151,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./parts/CSS/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../parts/CSS/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">مقدمه</span></span></a>
   </div>
 </li>
@@ -159,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="../../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">منابع</span></a>
   </div>
 </li>
@@ -168,40 +203,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">فهرست</h2>
-   
-  <ul>
-  <li><a href="#پیشگفتار" id="toc-پیشگفتار" class="nav-link active" data-scroll-target="#پیشگفتار">پیشگفتار</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../parts/HTML/index.html">HTML</a></li><li class="breadcrumb-item"><a href="../../parts/HTML/index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">مقدمه</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">HTML - CSS از مبتدی تا حرفه‌ای</h1>
+<h1 class="title">مقدمه</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">نویسنده</div>
-    <div class="quarto-title-meta-contents">
-             <p>مجید احمدی </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">تاریخ انتشار</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">۱ مرداد ۱۴۰۵</p>
-    </div>
-  </div>
   
     
   </div>
@@ -211,27 +228,35 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="assets/images/cover.webp" class="img-fluid"></p>
-<section id="پیشگفتار" class="level1 unnumbered">
-<h1 class="unnumbered">پیشگفتار</h1>
-<!-- Preface -->
-<p>هدف از نگارش این کتاب آشنایی تخصصی با HTML و مکمل‌های آن یعنی CSS و JavaScript است. به دلیل گستردگی مبحث جاوا اسکریپت بعد از صحبت درباره این دو پیش نیاز درباره آن در کتاب دیگری صحبت خواهیم کرد. HTML-CSS اهمیت زیادی دارند چون وب‌سایت‌ها تبدیل به یکی از مهم‌ترین رابط‌ها شده‌اند و مرورگرها عضو جدایی ناپذیر سیستم‌های عامل شده‌اند و رقابت سختی بین آنها فراگیر شده تا تبدیل به مرورگر پیش فرض کاربران شوند.</p>
-<p>بدون توجه به اینکه در کدام حوزه فناوری اطلاعات در حال <a href="https://roadmap.sh/">توسعه فردی</a> خود هستید HTML-CSS در عصر حاضر قسمتی از اطلاعات عمومی شما خواهند بود در صورتی که زمانی فقط طراحان وب به این مباحث نیاز حیاتی داشتند. آشنایی با آنها شما را قادر می‌سازد به پتانسیل بالقوه آنها آگاهی پیدا کنید. فردی که در حوزه IT فعالیت می‌کند باید به این توانایی‌ها آشنایی داشته باشد تا جعبه ابزار کامل‌تری در اختیار داشته باشد.</p>
-<p>این کتاب به درد چه کسانی می‌خوره؟</p>
-<ul>
-<li><p>مبتدیان جسور</p>
-<p>افرادی که به تازگی وارد دنیای برنامه‌نویسی وب شده‌اند. همه آنچه درباره HTML-CSS باید بدانند در این کتاب وجود دارد.</p></li>
-<li><p>Backend Developers</p>
-<p>برنامه‌نویسانی که معمولاً با سرور و پایگاه داده کار می‌کنند و قصد دارند یک آشنایی سریع و کاربردی با بخش Front پیدا کنند. اگر xaml یا razor و … را دیده باشید خواهید دید که به عنوان یک توسعه دهنده سمت سرور باید به عنوان بخشی از مبانی وب با این دو مبحث آشنا باشید.</p></li>
-<li><p>Frontend developers</p></li>
-<li><p>طراحان وب</p></li>
-<li><p>کسانی که به دنبال مرجع به روز هستند</p>
-<p>در این کتاب سعی شده به روزترین تغییرات حوزه HTML-CSS همواره گردآوری شده و در دسترس متخصصین این حوزه قرار گیرد. مطالب قبلی بر اساس این تغییرات به روز نگه داشته می‌شوند تا آخرین تغییرات مرورگرها و جدیدترین قابلیت‌های این دو حوزه در اختیار شما قرار گیرند.</p></li>
-</ul>
-<p>این کتاب برای چه کسانی نیست: اگر به دنبال کتابی هستید که صرفاً تگ‌های HTML را لیست کرده باشد، این کتاب برای شما نیست. اما اگر می‌خواهید وب‌سایتی بسازید که در موبایل و دسکتاپ عالی دیده شود، با سیستم‌عامل کاربر هماهنگ بشه و رفتارهای هوشمندانه داشته باشد، خوش آمدید! این کتاب برای شما نوشته شده است. از قابلیت‌های Git روی پروژه‌های مرتبط با HTML و CSS نیز می‌توان استفاده کرد. برای آشنایی با Git <a href="https://docs.google.com/document/d/1A13cY3E68Fkwm99M8EopNOU3njukQOxHsjsHXvvTSvs/edit?tab=t.0">این کتاب</a> را مطالعه بفرمایید. یکی دیگر از ابزارهای مفید در این حوزه Developer tools مرورگرها است. برای آشنایی با آن از <a href="https://docs.google.com/document/d/1HIPhxZSNIG8TZAbeFuuqap98xHlXUrjdPoaoGinG2z0/edit?tab=t.0">این کتاب</a> استفاده کنید.</p>
+<p>html یک زبان استاندارد <strong>نشانه گذاری</strong> سمت کاربر است که از آن برای ایجاد صفحات وب و برنامه‌های کاربردی وب، با استفاده از CSS و جاوا اسکریپت استفاده می‌کنند. مرورگرهای وب اسناد HTML را از یک سرور وب یا از سیستم رایانه دریافت می کنند و اسناد را به صفحات وب چندرسانه ای تبدیل می کنند. عناصر HTML ساختار یک صفحه وب را توصیف می کنند و در اصل شامل نشانه هایی برای ظاهر سند هستند.</p>
+<p>تاکنون نسخه هایی از آن منتشر شده است که <strong>html5</strong> آخرین نسخه از آن می باشد.</p>
+<p>ساختار تگ های HTML به این صورت است:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tag</span><span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  ...</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">tag</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>مثلا:</p>
+<p><img src="../../assets/images/html-tag.webp" class="img-fluid"></p>
+که داخل کاراکتر های باز و بسته نام عناصر و داخل تگ محتوای آن قرار می گیرد.تگ های HTML معمولا به صورت جفتی مانند
+<p>
+</p><p>و &lt;/ p&gt; قرار می گیرند. اولین تگ در یک جفت تگ شروع است، برچسب دوم تگ پایان است. تگ پایان مانند تگ شروع بوده، اما قبل از اسم تگ وارد شده است.گاهی نیز به شکل &lt;/&gt; استفاده شده و اصطلاحا <strong>self close</strong> هستند مثلا:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> </span><span class="dt">/&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>در HTML5 وجود slash آخر نیز اختیاری است. ساختار یک فایل html به شکل زیر است:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">"en-US"</span><span class="dt">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Page title<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">"utf-8"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">"viewport"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"width=device-width,initial-scale=1.0"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"icon"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"image/x-icon"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"img/favicon.ico"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"style.css"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>      <span class="co">&lt;!-- page contents goes here --&gt;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> type=</span><span class="st">"text/javascript"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"js/script.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
-</section>
 
 </main> <!-- /main -->
 
@@ -637,10 +662,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../index.html" class="pagination-link" aria-label="پیشگفتار">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">پیشگفتار</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./parts/HTML/index.html" class="pagination-link" aria-label="مقدمه">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">مقدمه</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../parts/HTML/elements.html" class="pagination-link" aria-label="تگ‌ها">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">تگ‌ها</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

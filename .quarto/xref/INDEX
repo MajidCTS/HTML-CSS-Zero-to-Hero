@@ -10,5 +10,14 @@
   },
   "references.qmd": {
     "references.html": "8c69d4fc"
+  },
+  "parts/HTML/index.qmd": {
+    "index.html": "7cfbb6c0"
+  },
+  "parts/HTML/elements.qmd": {
+    "elements.html": "33968338"
+  },
+  "parts/CSS/index.qmd": {
+    "index.html": "2eb212ec"
   }
 }

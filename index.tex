@@ -1,0 +1,394 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  persian,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+%% Support for zero-width non-joiner characters.
+\makeatletter
+\def\zerowidthnonjoiner{%
+  % Prevent ligatures and adjust kerning, but still support hyphenating.
+  \texorpdfstring{%
+    \TextOrMath{\nobreak\discretionary{-}{}{\kern.03em}%
+      \ifvmode\else\nobreak\hskip\z@skip\fi}{}%
+  }{}%
+}
+\makeatother
+\ifPDFTeX
+  \DeclareUnicodeCharacter{200C}{\zerowidthnonjoiner}
+\else
+  \catcode`^^^^200c=\active
+  \protected\def ^^^^200c{\zerowidthnonjoiner}
+\fi
+%% End of ZWNJ support
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off,provide=*]{babel}
+\else
+\usepackage[bidi=default,shorthands=off,provide=*]{babel}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{فهرست}
+\else
+  \newcommand\contentsname{فهرست}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={HTML - CSS از مبتدی تا حرفه‌ای},
+  pdfauthor={مجید احمدی},
+  pdflang={fa},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{HTML - CSS از مبتدی تا حرفه‌ای}
+\author{مجید احمدی}
+\date{2026-07-23}
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{فهرست}
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\bookmarksetup{startatroot}
+
+\chapter*{پیشگفتار}\label{ux67eux6ccux634ux6afux641ux62aux627ux631}
+\addcontentsline{toc}{chapter}{پیشگفتار}
+
+\markboth{پیشگفتار}{پیشگفتار}
+
+\pandocbounded{\includegraphics[keepaspectratio]{assets/images/cover.webp}}
+
+هدف از نگارش این کتاب آشنایی تخصصی با HTML و مکمل‌های آن یعنی CSS و
+JavaScript است. به دلیل گستردگی مبحث جاوا اسکریپت بعد از صحبت درباره این
+دو پیش نیاز درباره آن در کتاب دیگری صحبت خواهیم کرد. HTML-CSS اهمیت
+زیادی دارند چون وب‌سایت‌ها تبدیل به یکی از مهم‌ترین رابط‌ها شده‌اند و
+مرورگرها عضو جدایی ناپذیر سیستم‌های عامل شده‌اند و رقابت سختی بین آنها
+فراگیر شده تا تبدیل به مرورگر پیش فرض کاربران شوند.
+
+بدون توجه به اینکه در کدام حوزه فناوری اطلاعات در حال
+\href{https://roadmap.sh/}{توسعه فردی} خود هستید HTML-CSS در عصر حاضر
+قسمتی از اطلاعات عمومی شما خواهند بود در صورتی که زمانی فقط طراحان وب به
+این مباحث نیاز حیاتی داشتند. آشنایی با آنها شما را قادر می‌سازد به
+پتانسیل بالقوه آنها آگاهی پیدا کنید. فردی که در حوزه IT فعالیت می‌کند
+باید به این توانایی‌ها آشنایی داشته باشد تا جعبه ابزار کامل‌تری در اختیار
+داشته باشد.
+
+این کتاب به درد چه کسانی می‌خوره؟
+
+\begin{itemize}
+\item
+  مبتدیان جسور
+
+  افرادی که به تازگی وارد دنیای برنامه‌نویسی وب شده‌اند. همه آنچه درباره
+  HTML-CSS باید بدانند در این کتاب وجود دارد.
+\item
+  Backend Developers
+
+  برنامه‌نویسانی که معمولاً با سرور و پایگاه داده کار می‌کنند و قصد دارند
+  یک آشنایی سریع و کاربردی با بخش Front پیدا کنند. اگر xaml یا razor و
+  \ldots{} را دیده باشید خواهید دید که به عنوان یک توسعه دهنده سمت سرور
+  باید به عنوان بخشی از مبانی وب با این دو مبحث آشنا باشید.
+\item
+  Frontend developers
+\item
+  طراحان وب
+\item
+  کسانی که به دنبال مرجع به روز هستند
+
+  در این کتاب سعی شده به روزترین تغییرات حوزه HTML-CSS همواره گردآوری
+  شده و در دسترس متخصصین این حوزه قرار گیرد. مطالب قبلی بر اساس این
+  تغییرات به روز نگه داشته می‌شوند تا آخرین تغییرات مرورگرها و جدیدترین
+  قابلیت‌های این دو حوزه در اختیار شما قرار گیرند.
+\end{itemize}
+
+این کتاب برای چه کسانی نیست: اگر به دنبال کتابی هستید که صرفاً تگ‌های HTML
+را لیست کرده باشد، این کتاب برای شما نیست. اما اگر می‌خواهید وب‌سایتی
+بسازید که در موبایل و دسکتاپ عالی دیده شود، با سیستم‌عامل کاربر هماهنگ
+بشه و رفتارهای هوشمندانه داشته باشد، خوش آمدید! این کتاب برای شما نوشته
+شده است. از قابلیت‌های Git روی پروژه‌های مرتبط با HTML و CSS نیز می‌توان
+استفاده کرد. برای آشنایی با Git
+\href{https://docs.google.com/document/d/1A13cY3E68Fkwm99M8EopNOU3njukQOxHsjsHXvvTSvs/edit?tab=t.0}{این
+کتاب} را مطالعه بفرمایید. یکی دیگر از ابزارهای مفید در این حوزه
+Developer tools مرورگرها است. برای آشنایی با آن از
+\href{https://docs.google.com/document/d/1HIPhxZSNIG8TZAbeFuuqap98xHlXUrjdPoaoGinG2z0/edit?tab=t.0}{این
+کتاب} استفاده کنید.
+
+\part{HTML}
+
+\chapter{مقدمه}\label{ux645ux642ux62fux645ux647}
+
+html یک زبان استاندارد \textbf{نشانه گذاری} سمت کاربر است که از آن برای
+ایجاد صفحات وب و برنامه‌های کاربردی وب، با استفاده از CSS و جاوا اسکریپت
+استفاده می‌کنند. مرورگرهای وب اسناد HTML را از یک سرور وب یا از سیستم
+رایانه دریافت می کنند و اسناد را به صفحات وب چندرسانه ای تبدیل می کنند.
+عناصر HTML ساختار یک صفحه وب را توصیف می کنند و در اصل شامل نشانه هایی
+برای ظاهر سند هستند.
+
+تاکنون نسخه هایی از آن منتشر شده است که \textbf{html5} آخرین نسخه از آن
+می باشد.
+
+ساختار تگ های HTML به این صورت است:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{\textless{}}\KeywordTok{tag}\DataTypeTok{\textgreater{}}
+\NormalTok{  ...}
+\DataTypeTok{\textless{}/}\KeywordTok{tag}\DataTypeTok{\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+مثلا:
+
+\pandocbounded{\includegraphics[keepaspectratio]{parts/HTML/../../assets/images/html-tag.webp}}
+
+که داخل کاراکتر های باز و بسته نام عناصر و داخل تگ محتوای آن قرار می
+گیرد.تگ های HTML معمولا به صورت جفتی مانند
+
+و \textless/ p\textgreater{} قرار می گیرند. اولین تگ در یک جفت تگ شروع
+است، برچسب دوم تگ پایان است. تگ پایان مانند تگ شروع بوده، اما قبل از اسم
+تگ وارد شده است.گاهی نیز به شکل \textless/\textgreater{} استفاده شده و
+اصطلاحا \textbf{self close} هستند مثلا:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{\textless{}}\KeywordTok{input}\OtherTok{ }\DataTypeTok{/\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+در HTML5 وجود slash آخر نیز اختیاری است. ساختار یک فایل html به شکل زیر
+است:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{\textless{}!DOCTYPE}\NormalTok{ html}\DataTypeTok{\textgreater{}}
+\DataTypeTok{\textless{}}\KeywordTok{html}\OtherTok{ lang}\OperatorTok{=}\StringTok{"en{-}US"}\DataTypeTok{\textgreater{}}
+   \DataTypeTok{\textless{}}\KeywordTok{head}\DataTypeTok{\textgreater{}}
+      \DataTypeTok{\textless{}}\KeywordTok{title}\DataTypeTok{\textgreater{}}\NormalTok{Page title}\DataTypeTok{\textless{}/}\KeywordTok{title}\DataTypeTok{\textgreater{}}
+      \DataTypeTok{\textless{}}\KeywordTok{meta}\OtherTok{ charset}\OperatorTok{=}\StringTok{"utf{-}8"}\OtherTok{ }\DataTypeTok{/\textgreater{}}
+      \DataTypeTok{\textless{}}\KeywordTok{meta}\OtherTok{ name}\OperatorTok{=}\StringTok{"viewport"}\OtherTok{ content}\OperatorTok{=}\StringTok{"width=device{-}width,initial{-}scale=1.0"}\OtherTok{ }\DataTypeTok{/\textgreater{}}
+      \DataTypeTok{\textless{}}\KeywordTok{link}\OtherTok{ rel}\OperatorTok{=}\StringTok{"icon"}\OtherTok{ type}\OperatorTok{=}\StringTok{"image/x{-}icon"}\OtherTok{ href}\OperatorTok{=}\StringTok{"img/favicon.ico"}\OtherTok{ }\DataTypeTok{/\textgreater{}}
+      \DataTypeTok{\textless{}}\KeywordTok{link}\OtherTok{ rel}\OperatorTok{=}\StringTok{"stylesheet"}\OtherTok{ href}\OperatorTok{=}\StringTok{"style.css"}\OtherTok{ }\DataTypeTok{/\textgreater{}}
+   \DataTypeTok{\textless{}/}\KeywordTok{head}\DataTypeTok{\textgreater{}}
+   \DataTypeTok{\textless{}}\KeywordTok{body}\DataTypeTok{\textgreater{}}
+      \CommentTok{\textless{}!{-}{-} page contents goes here {-}{-}\textgreater{}}
+      \DataTypeTok{\textless{}}\KeywordTok{script}\OtherTok{ type=}\StringTok{"text/javascript"}\OtherTok{ src}\OperatorTok{=}\StringTok{"js/script.js"}\DataTypeTok{\textgreater{}\textless{}/}\KeywordTok{script}\DataTypeTok{\textgreater{}}
+   \DataTypeTok{\textless{}/}\KeywordTok{body}\DataTypeTok{\textgreater{}}
+\DataTypeTok{\textless{}/}\KeywordTok{html}\DataTypeTok{\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+\chapter{تگ‌ها}\label{ux62aux6afux647ux627}
+
+\part{CSS}
+
+\chapter{مقدمه}\label{ux645ux642ux62fux645ux647-1}
+
+\bookmarksetup{startatroot}
+
+\chapter*{منابع}\label{ux645ux646ux627ux628ux639}
+\addcontentsline{toc}{chapter}{منابع}
+
+\markboth{منابع}{منابع}
+
+\protect\phantomsection\label{refs}
+
+
+
+
+\end{document}
