@@ -41,5 +41,4 @@ html یک زبان استاندارد **نشانه گذاری** سمت کارب�
       <script type="text/javascript" src="js/script.js"></script>
    </body>
 </html>
-
 ```

@@ -1,0 +1,191 @@
+/* ظرف اصلی که دو تصویر را در خود نگه می‌دارد */
+.slider-container {
+    position: relative;
+    max-width: 70%;
+    /* برای واکنش‌گرایی (Responsive) */
+    margin: 0 auto;
+    /* وسط‌چین کردن */
+    overflow: hidden;
+    /* این خط بسیار مهم است: هر چیزی که از ظرف بیرون بزند، پنهان می‌شود */
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    user-select: none;
+    /* جلوگیری از انتخاب متن هنگام کشیدن */
+}
+
+
+/* تصویر اول (قبل / تصویر پایینی) - همیشه کامل دیده می‌شود */
+.slider-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.image-before,
+.image-after {
+    max-width: 100%;
+    margin-inline: auto;
+
+}
+
+/* تصویر دوم (بعد / تصویر بالایی) - روی تصویر اول قرار می‌گیرد و برش می‌خورد */
+.image-after {
+    position: absolute;
+    /* قرار گرفتن روی تصویر اول */
+    /* top: 0; */
+    /* left: 0; */
+    z-index: 1;
+    height: 100%;
+    object-fit: cover;
+    /* برای اینکه تصویر به‌خوبی در ظرف بماند */
+    clip-path: inset(0 50% 0 0);
+    /* در ابتدا، نیمی از تصویر را نشان بده */
+}
+
+
+/* دسته اسلایدر (خط عمودی و دایره وسط) */
+.slider-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    /* در ابتدا در وسط قرار دارد */
+    width: 4px;
+    height: 100%;
+    background-color: white;
+    cursor: ew-resize;
+    /* تغییر شکل ماوس به فلش دوطرفه */
+    transform: translateX(-50%);
+    /* برای وسط‌چین کردن دقیق خط */
+    z-index: 10;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s;
+}
+
+
+/* دایره وسط دسته */
+.slider-handle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #ddd;
+}
+
+
+/* دو فلش کوچک داخل دایره (جهت‌نما) */
+.slider-handle::before {
+    content: '◀ ▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 7px;
+    color: #333;
+    z-index: 11;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+
+/* استایل برای نمایش وضعیت فعلی (اختیاری) */
+.info-text {
+    text-align: center;
+    margin-top: 15px;
+    font-family: sans-serif;
+    color: #555;
+    direction: ltr;
+}
+
+
+
+/* ==========================================
+method 2
+========================================== */
+
+
+
+.comparison-container img,
+.comparison-container .before {
+    max-width: 100%;
+}
+
+/* ظرف اصلی که دو تصویر را در خود نگه می‌دارد */
+.comparison-container {
+    direction: ltr;
+    position: relative;
+    overflow: hidden;
+    max-width: 70%;
+    /* این متغیر همزمان با تغییر input tag تغییر خواهد کرد */
+    --pos: 50;
+}
+
+.comparison-container .before {
+    position: absolute;
+    clip-path: inset(0 calc((100 - var(--pos)) * 1%) 0 0);
+}
+
+.comparison-container .handle {
+    left: calc(var(--pos) * 1%);
+}
+
+/* Input range invisible */
+.comparison-container input[type="range"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: ew-resize;
+    z-index: 20;
+    -webkit-appearance: none;
+}
+
+.comparison-container .handle {
+    position: absolute;
+    top: 0;
+    left: calc(var(--pos) * 1%);
+    width: 3px;
+    height: 100%;
+    background: white;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    pointer-events: none;
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+
+.comparison-container .handle::before {
+    content: "↔";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 44px;
+    height: 44px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: white;
+    color: #333;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+}

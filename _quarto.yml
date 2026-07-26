@@ -18,6 +18,9 @@ book:
     - part: "CSS"
       chapters: 
       - parts\CSS\index.qmd
+    - part: "How To"
+      chapters:
+      - parts\HowTo\BeforeAfterSlider.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -30,6 +33,7 @@ format:
     css: assets/css/styles.css
     include-after-body:
       - assets/js/main.js
+    html-math-method: katex
 
   # LaTeX does not recognize WebP yet
   # pdf:

@@ -1,0 +1,10 @@
+html {
+    direction: rtl;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url("../fonts/Vazirmatn.ttf");
+
+}

@@ -9,9 +9,6 @@ html {
 
 }
 
-/* p * {
-
-} */
 
 body {
     direction: rtl;
@@ -77,6 +74,12 @@ pre.css::before {
     display: block;
 }
 
+pre.js::before {
+    content: "</> JS";
+    font-size: 0.7em;
+    margin-bottom: 1.5em;
+    display: block;
+}
 
 a {
     text-decoration: none;

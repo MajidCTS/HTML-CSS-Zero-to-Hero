@@ -1,0 +1,300 @@
+---
+title: Before/After Comparison Slider
+css: ../../assets/css/HowTo/BeforeAtferSlider.css
+# format:
+#   html:
+    # css: ../../assets/css/HowTo/BeforeAtferSlider.css
+    # include-after-body: ../../assets/js/HowTo/BeforeAtferSlider.js
+    # resources:
+    #   - ../../assets/js/HowTo/BeforeAtferSlider.js
+---
+
+```{=html}
+<div class="slider-container" id="slider">
+    <img src="../../assets/images/HowTo/after.webp" alt="تصویر بعد" class="image-after" id="imageAfter">
+    <img src="../../assets/images/HowTo/before.webp" alt="تصویر قبل" class="image-before">
+    <div class="slider-handle" id="sliderHandle"></div>
+</div>
+<script>
+    const slider = document.getElementById('slider');
+    const imageAfter = document.getElementById('imageAfter');
+    const handle = document.getElementById('sliderHandle');
+    let isDragging = false;
+    function updateSlider(clientX) {
+        const rect = slider.getBoundingClientRect();
+        let x = clientX - rect.left;
+        x = Math.max(0, Math.min(x, rect.width));
+        const percent = (x / rect.width) * 100;
+        imageAfter.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+        handle.style.left = `${percent}%`;
+    }
+    handle.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        handle.style.cursor = 'grabbing';
+        e.preventDefault();
+    });
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        updateSlider(e.clientX);
+    });
+    document.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            handle.style.cursor = 'ew-resize';
+        }
+    });
+    handle.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        e.preventDefault();
+    });
+    document.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const touch = e.touches[0];
+        updateSlider(touch.clientX);
+        e.preventDefault();
+    });
+    document.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+    slider.addEventListener('click', (e) => {
+        if (e.target === handle || e.target === slider) {
+            updateSlider(e.clientX);
+        }
+    });
+</script>
+```
+
+
+
+
+
+
+```html
+<div class="slider-container" id="slider">
+    <img src="../../assets/images/HowTo/after.webp" alt="تصویر بعد" class="image-after" id="imageAfter">
+    <img src="../../assets/images/HowTo/before.webp" alt="تصویر قبل" class="image-before">
+    <div class="slider-handle" id="sliderHandle"></div>
+</div>
+```
+
+```css
+/* ظرف اصلی که دو تصویر را در خود نگه می‌دارد */
+.slider-container {
+    position: relative;
+    /* width: 600px; */
+    /* عرض دلخواه */
+    max-width: 70%;
+    /* برای واکنش‌گرایی (Responsive) */
+    margin: 0 auto;
+    /* وسط‌چین کردن */
+    overflow: hidden;
+    /* این خط بسیار مهم است: هر چیزی که از ظرف بیرون بزند، پنهان می‌شود */
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    user-select: none;
+    /* جلوگیری از انتخاب متن هنگام کشیدن */
+}
+
+
+/* تصویر اول (قبل / تصویر پایینی) - همیشه کامل دیده می‌شود */
+.slider-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.image-before,
+.image-after {
+    max-width: 100%;
+    margin-inline: auto;
+
+}
+
+/* تصویر دوم (بعد / تصویر بالایی) - روی تصویر اول قرار می‌گیرد و برش می‌خورد */
+.image-after {
+    position: absolute;
+    /* قرار گرفتن روی تصویر اول */
+    /* top: 0; */
+    /* left: 0; */
+    z-index: 1;
+    height: 100%;
+    object-fit: cover;
+    /* برای اینکه تصویر به‌خوبی در ظرف بماند */
+    clip-path: inset(0 50% 0 0);
+    /* در ابتدا، نیمی از تصویر را نشان بده */
+}
+
+
+/* دسته اسلایدر (خط عمودی و دایره وسط) */
+.slider-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    /* در ابتدا در وسط قرار دارد */
+    width: 4px;
+    height: 100%;
+    background-color: white;
+    cursor: ew-resize;
+    /* تغییر شکل ماوس به فلش دوطرفه */
+    transform: translateX(-50%);
+    /* برای وسط‌چین کردن دقیق خط */
+    z-index: 10;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s;
+}
+
+
+/* دایره وسط دسته */
+.slider-handle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #ddd;
+}
+
+
+/* دو فلش کوچک داخل دایره (جهت‌نما) */
+.slider-handle::before {
+    content: '◀ ▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 7px;
+    color: #333;
+    z-index: 11;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+
+/* استایل برای نمایش وضعیت فعلی (اختیاری) */
+.info-text {
+    text-align: center;
+    margin-top: 15px;
+    font-family: sans-serif;
+    color: #555;
+    direction: ltr;
+}
+```
+
+```js
+// -------- گرفتن المان‌های مورد نیاز --------
+const slider = document.getElementById('slider');          // ظرف اصلی
+const imageAfter = document.getElementById('imageAfter');  // تصویر رویی که برش می‌خورد
+const handle = document.getElementById('sliderHandle');    // دسته اسلایدر
+
+
+let isDragging = false; // آیا کاربر در حال کشیدن است؟
+
+
+// -------- تابع اصلی: برش تصویر و جابجایی دسته بر اساس موقعیت ماوس --------
+function updateSlider(clientX) {
+    // ۱. موقعیت مستطیل ظرف را بدست می‌آوریم (offset left, width)
+    const rect = slider.getBoundingClientRect();
+
+
+    // ۲. محاسبه موقعیت ماوس نسبت به لبه چپ ظرف (حداقل ۰ و حداکثر عرض ظرف)
+    let x = clientX - rect.left;
+    x = Math.max(0, Math.min(x, rect.width)); // محدود کردن به داخل ظرف
+
+
+    // ۳. تبدیل به درصد (۰ تا ۱۰۰)
+    const percent = (x / rect.width) * 100;
+
+
+    // ۴. اعمال به تصویر رویی (برش از راست)
+    imageAfter.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+
+
+    // ۵. جابجایی دسته به همان موقعیت
+    handle.style.left = `${percent}%`;
+}
+
+
+// -------- رویدادهای ماوس --------
+// وقتی کاربر روی دسته کلیک می‌کند، حالت کشیدن فعال می‌شود
+handle.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    handle.style.cursor = 'grabbing'; // تغییر شکل ماوس
+    e.preventDefault(); // جلوگیری از انتخاب متن
+});
+
+
+// وقتی ماوس روی صفحه حرکت می‌کند (اگر در حالت کشیدن باشیم)
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return; // اگر کشیدن فعال نیست، کاری نکن
+    updateSlider(e.clientX);
+});
+
+
+// وقتی دکمه ماوس رها می‌شود، حالت کشیدن غیرفعال می‌شود
+document.addEventListener('mouseup', () => {
+    if (isDragging) {
+        isDragging = false;
+        handle.style.cursor = 'ew-resize'; // برگشت به حالت عادی
+    }
+});
+
+
+// -------- پشتیبانی از دستگاه‌های لمسی (موبایل و تبلت) --------
+// وقتی کاربر با انگشت روی دسته لمس می‌کند
+handle.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    e.preventDefault(); // جلوگیری از اسکرول صفحه
+});
+
+
+// وقتی انگشت روی صفحه حرکت می‌کند
+document.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const touch = e.touches[0];
+    updateSlider(touch.clientX);
+    e.preventDefault(); // جلوگیری از اسکرول هنگام کشیدن
+});
+
+
+// وقتی انگشت از روی صفحه برداشته می‌شود
+document.addEventListener('touchend', () => {
+    isDragging = false;
+});
+
+
+// (اختیاری) اگر کاربر روی ظرف کلیک کند، دسته به همان نقطه برود
+slider.addEventListener('click', (e) => {
+    // فقط اگر روی دسته کلیک نکرده باشد (تا از تداخل جلوگیری شود)
+    if (e.target === handle || e.target === slider) {
+        updateSlider(e.clientX);
+    }
+});
+```
+
+
+
+
+و بدون Javascript
+
+
+```{=html}
+<div class="comparison-container">
+    <img class="before" src="../../assets/images/HowTo/before.webp" />
+    <img src="../../assets/images/HowTo/after.webp" />
+
+    <div class="handle"></div>
+    <input type="range" min="0" max="100" value="50" oninput="updateSlider2(event)">
+</div>
+<script>
+    function updateSlider2(e) {
+        e.target.parentElement.style.setProperty('--pos', e.target.value);
+    }
+</script>
+```
+
+
