@@ -1,0 +1,460 @@
+# رنگ‌ها
+نوع داده `<color>` در CSS نشان دهنده یک رنگ است. یک `<color>` همچنین ممکن است شامل یک مقدار شفافیت کانال آلفا باشد که نشان می‌دهد رنگ چگونه باید با پس‌زمینه خود ترکیب شود.
+
+::: {.callout-note}
+ اگرچه مقادیر `<color>` دقیقاً تعریف شده‌اند، اما ظاهر واقعی آنها ممکن است (گاهی اوقات به طور قابل توجهی) از دستگاهی به دستگاه دیگر متفاوت باشد. دلیل این امر این است که اکثر دستگاه‌ها کالیبره نشده‌اند و برخی از مرورگرها از پروفایل‌های رنگی دستگاه‌های خروجی پشتیبانی نمی‌کنند.
+:::
+
+چند روش برای مشخص کردن رنگ یک عنصر وجود دارد:
+
+- با نام
+- با عددی در مبنای شانزده
+- توابع
+    - sRGB
+        - RGB
+        - HSL
+        - HWB
+    - CIELAB
+        - lab
+        - lch
+    - Oklab
+        - oklch
+        - oklab
+    - Hex
+    - RGBa
+    - HSLa
+    - device-cmyk
+    - light-dark 
+- نسبی
+    - color-function
+    - color
+    - from
+
+
+
+```css
+/* Named colors */
+rebeccapurple
+aliceblue
+
+/* RGB Hexadecimal */
+#f09
+#ff0099
+
+/* RGB (Red, Green, Blue) */
+rgb(255 0 153)
+rgb(255 0 153 / 80%)
+
+/* HSL (Hue, Saturation, Lightness) */
+hsl(150 30% 60%)
+hsl(150 30% 60% / 80%)
+
+/* HWB (Hue, Whiteness, Blackness) */
+hwb(12 50% 0%)
+hwb(194 0% 0% / 0.5)
+
+/* Lab (Lightness, A-axis, B-axis) */
+lab(50% 40 59.5)
+lab(50% 40 59.5 / 0.5)
+
+/* LCH (Lightness, Chroma, Hue) */
+lch(52.2% 72.2 50)
+lch(52.2% 72.2 50 / 0.5)
+
+/* Oklab (Lightness, A-axis, B-axis) */
+oklab(59% 0.1 0.1)
+oklab(59% 0.1 0.1 / 0.5)
+
+/* OkLCh (Lightness, Chroma, Hue) */
+oklch(60% 0.15 50)
+oklch(60% 0.15 50 / 0.5)
+
+/* Relative CSS colors */
+/* HSL hue change */
+hsl(from red 240deg s l)
+/* HWB alpha channel change */
+hwb(from green h w b / 0.5)
+/* LCH lightness change */
+lch(from blue calc(l + 20) c h)
+
+/* light-dark */
+light-dark(white, black)
+light-dark(rgb(255 255 255), rgb(0 0 0))
+```
+
+کلمه کلیدی currentColor مقدار ویژگی رنگ یک عنصر را نشان می‌دهد. این به شما امکان می‌دهد از مقدار رنگ روی ویژگی‌هایی که به طور پیش‌فرض آن را دریافت نمی‌کنند، استفاده کنید.
+
+اگر currentColor به عنوان مقدار ویژگی رنگ استفاده شود، در عوض مقدار خود را از مقدار ارث‌بری شده از ویژگی رنگ می‌گیرد.
+
+در ابتدا 16 نام رنگ در css وجود داشت ولی بعدها تعداد بیشتری اضافه شد.
+
+::: {.callout-tip collapse="true"}
+## Expand to view code
+
+```html
+<style>
+    :root {
+        --selectedcolor: currentColor;
+        --selectedInfo: "";
+
+    }
+
+    #colorPreview {
+        height: 100px;
+        border: 1px solid black;
+        background-color: var(--selectedcolor);
+        color: contrast-color(var(--selectedcolor));
+    }
+
+
+    #colorPreview::after {
+        display: block;
+        text-align: center;
+        padding-top: 40px;
+        content: var(--selectedInfo);
+    }
+</style>
+<div id="colorPreview"></div>
+<select id="colors" onchange="updateBox(this)">
+    <option value="#000000">Black</option>
+    <option value="#C0C0C0">Silver</option>
+    <option value="#808080">Gray</option>
+    <option value="#FFFFFF">White</option>
+    <option value="#800000">Maroon</option>
+    <option value="#FF0000">Red</option>
+</select>
+
+
+<script>
+    function updateBox(select) {
+        let htmlTag = document.documentElement;
+
+        let colorName = select.options[select.selectedIndex].text;
+        let colorCode = select.value;
+
+        htmlTag.style.setProperty(
+            '--selectedcolor',
+            colorCode
+        );
+
+        htmlTag.style.setProperty(
+            '--selectedInfo',
+            `"${colorName} - ${colorCode}"`
+        );
+    }
+    const select = document.getElementById('colors');
+    updateBox(select);
+</script>
+```
+
+تابع contrast-color رنگ را متضاد با رنگ پس زمینه انتخاب می کند.
+:::
+
+```{=html}
+<style>
+    :root {
+        --selectedcolor: black;
+        --selectedInfo: "";
+
+    }
+
+    #sampledivColors1 #colorPreview {
+        height: 100px;
+        border: 1px solid black;
+        background-color: var(--selectedcolor);
+        color: contrast-color(var(--selectedcolor));
+    }
+
+
+    #sampledivColors1 #colorPreview::after {
+        display: block;
+        text-align: center;
+        padding-top: 40px;
+        content: var(--selectedInfo);
+    }
+</style>
+<div class="output" id="sampledivColors1">
+    <div id="colorPreview"></div>
+    <select id="colors" onchange="updateBox(this)">
+        <option value="#000000">Black</option>
+        <option value="#C0C0C0">Silver</option>
+        <option value="#808080">Gray</option>
+        <option value="#FFFFFF">White</option>
+        <option value="#800000">Maroon</option>
+        <option value="#FF0000">Red</option>
+        <option value="#800080">Purple</option>
+        <option value="#FF00FF">Fuchsia</option>
+        <option value="#008000">Green</option>
+        <option value="#00FF00">Lime</option>
+        <option value="#808000">Olive</option>
+        <option value="#FFFF00">Yellow</option>
+        <option value="#000080">Navy</option>
+        <option value="#0000FF">Blue</option>
+        <option value="#008080">Teal</option>
+        <option value="#00FFFF">Aqua</option>
+        <option value="#F0F8FF">AliceBlue</option>
+        <option value="#FAEBD7">AntiqueWhite</option>
+        <option value="#7FFFD4">Aquamarine</option>
+        <option value="#F0FFFF">Azure</option>
+        <option value="#F5F5DC">Beige</option>
+        <option value="#FFE4C4">Bisque</option>
+        <option value="#FFEBCD">BlanchedAlmond</option>
+        <option value="#8A2BE2">BlueViolet</option>
+        <option value="#A52A2A">Brown</option>
+        <option value="#DEB887">BurlyWood</option>
+        <option value="#5F9EA0">CadetBlue</option>
+        <option value="#7FFF00">Chartreuse</option>
+        <option value="#D2691E">Chocolate</option>
+        <option value="#FF7F50">Coral</option>
+        <option value="#6495ED">CornflowerBlue</option>
+        <option value="#FFF8DC">Cornsilk</option>
+        <option value="#DC143C">Crimson</option>
+        <option value="#00FFFF">Cyan</option>
+        <option value="#00008B">DarkBlue</option>
+        <option value="#008B8B">DarkCyan</option>
+        <option value="#B8860B">DarkGoldenRod</option>
+        <option value="#A9A9A9">DarkGray</option>
+        <option value="#006400">DarkGreen</option>
+        <option value="#A9A9A9">DarkGrey</option>
+        <option value="#BDB76B">DarkKhaki</option>
+        <option value="#8B008B">DarkMagenta</option>
+        <option value="#556B2F">DarkOliveGreen</option>
+        <option value="#FF8C00">DarkOrange</option>
+        <option value="#9932CC">DarkOrchid</option>
+        <option value="#8B0000">DarkRed</option>
+        <option value="#E9967A">DarkSalmon</option>
+        <option value="#8FBC8F">DarkSeaGreen</option>
+        <option value="#483D8B">DarkSlateBlue</option>
+        <option value="#2F4F4F">DarkSlateGray</option>
+        <option value="#2F4F4F">DarkSlateGrey</option>
+        <option value="#00CED1">DarkTurquoise</option>
+        <option value="#9400D3">DarkViolet</option>
+        <option value="#FF1493">DeepPink</option>
+        <option value="#00BFFF">DeepSkyBlue</option>
+        <option value="#696969">DimGray</option>
+        <option value="#696969">DimGrey</option>
+        <option value="#1E90FF">DodgerBlue</option>
+        <option value="#B22222">FireBrick</option>
+        <option value="#FFFAF0">FloralWhite</option>
+        <option value="#228B22">ForestGreen</option>
+        <option value="#DCDCDC">Gainsboro</option>
+        <option value="#F8F8FF">GhostWhite</option>
+        <option value="#FFD700">Gold</option>
+        <option value="#DAA520">GoldenRod</option>
+        <option value="#ADFF2F">GreenYellow</option>
+        <option value="#808080">Grey</option>
+        <option value="#F0FFF0">HoneyDew</option>
+        <option value="#FF69B4">HotPink</option>
+        <option value="#CD5C5C">IndianRed</option>
+        <option value="#4B0082">Indigo</option>
+        <option value="#FFFFF0">Ivory</option>
+        <option value="#F0E68C">Khaki</option>
+        <option value="#E6E6FA">Lavender</option>
+        <option value="#FFF0F5">LavenderBlush</option>
+        <option value="#7CFC00">LawnGreen</option>
+        <option value="#FFFACD">LemonChiffon</option>
+        <option value="#ADD8E6">LightBlue</option>
+        <option value="#F08080">LightCoral</option>
+        <option value="#E0FFFF">LightCyan</option>
+        <option value="#FAFAD2">LightGoldenRodYellow</option>
+        <option value="#D3D3D3">LightGray</option>
+        <option value="#90EE90">LightGreen</option>
+        <option value="#D3D3D3">LightGrey</option>
+        <option value="#FFB6C1">LightPink</option>
+        <option value="#FFA07A">LightSalmon</option>
+        <option value="#20B2AA">LightSeaGreen</option>
+        <option value="#87CEFA">LightSkyBlue</option>
+        <option value="#778899">LightSlateGray</option>
+        <option value="#778899">LightSlateGrey</option>
+        <option value="#B0C4DE">LightSteelBlue</option>
+        <option value="#FFFFE0">LightYellow</option>
+        <option value="#32CD32">LimeGreen</option>
+        <option value="#FAF0E6">Linen</option>
+        <option value="#FF00FF">Magenta</option>
+        <option value="#66CDAA">MediumAquaMarine</option>
+        <option value="#0000CD">MediumBlue</option>
+        <option value="#BA55D3">MediumOrchid</option>
+        <option value="#9370DB">MediumPurple</option>
+        <option value="#3CB371">MediumSeaGreen</option>
+        <option value="#7B68EE">MediumSlateBlue</option>
+        <option value="#00FA9A">MediumSpringGreen</option>
+        <option value="#48D1CC">MediumTurquoise</option>
+        <option value="#C71585">MediumVioletRed</option>
+        <option value="#191970">MidnightBlue</option>
+        <option value="#F5FFFA">MintCream</option>
+        <option value="#FFE4E1">MistyRose</option>
+        <option value="#FFE4B5">Moccasin</option>
+        <option value="#FFDEAD">NavajoWhite</option>
+        <option value="#FDF5E6">OldLace</option>
+        <option value="#6B8E23">OliveDrab</option>
+        <option value="#FFA500">Orange</option>
+        <option value="#FF4500">OrangeRed</option>
+        <option value="#DA70D6">Orchid</option>
+        <option value="#EEE8AA">PaleGoldenRod</option>
+        <option value="#98FB98">PaleGreen</option>
+        <option value="#AFEEEE">PaleTurquoise</option>
+        <option value="#DB7093">PaleVioletRed</option>
+        <option value="#FFEFD5">PapayaWhip</option>
+        <option value="#FFDAB9">PeachPuff</option>
+        <option value="#CD853F">Peru</option>
+        <option value="#FFC0CB">Pink</option>
+        <option value="#DDA0DD">Plum</option>
+        <option value="#B0E0E6">PowderBlue</option>
+        <option value="#663399">RebeccaPurple</option>
+        <option value="#BC8F8F">RosyBrown</option>
+        <option value="#4169E1">RoyalBlue</option>
+        <option value="#8B4513">SaddleBrown</option>
+        <option value="#FA8072">Salmon</option>
+        <option value="#F4A460">SandyBrown</option>
+        <option value="#2E8B57">SeaGreen</option>
+        <option value="#FFF5EE">SeaShell</option>
+        <option value="#A0522D">Sienna</option>
+        <option value="#87CEEB">SkyBlue</option>
+        <option value="#6A5ACD">SlateBlue</option>
+        <option value="#708090">SlateGray</option>
+        <option value="#708090">SlateGrey</option>
+        <option value="#FFFAFA">Snow</option>
+        <option value="#00FF7F">SpringGreen</option>
+        <option value="#4682B4">SteelBlue</option>
+        <option value="#D2B48C">Tan</option>
+        <option value="#D8BFD8">Thistle</option>
+        <option value="#FF6347">Tomato</option>
+        <option value="transparent">Transparent</option>
+        <option value="#40E0D0">Turquoise</option>
+        <option value="#EE82EE">Violet</option>
+        <option value="#F5DEB3">Wheat</option>
+        <option value="#F5F5F5">WhiteSmoke</option>
+        <option value="#9ACD32">YellowGreen</option>
+    </select>
+</div>
+
+<script>
+    function updateBox(select) {
+        let htmlTag = document.documentElement;
+
+        let colorName = select.options[select.selectedIndex].text;
+        let colorCode = select.value;
+
+        htmlTag.style.setProperty(
+            '--selectedcolor',
+            colorCode
+        );
+
+        htmlTag.style.setProperty(
+            '--selectedInfo',
+            `"${colorName} - ${colorCode}"`
+        );
+    }
+
+    const select = document.getElementById('colors');
+    updateBox(select);
+</script>
+```
+
+
+در روزش HEX اگر هر ۶ کاراکتر یکسان بودند می توان فقط سه تا از آنها را نوشت.
+
+و کد رنگ زیر همان رنگ با opacity و شفافیت کمتر است و زمینه پشت شیی که این رنگ را دارد تا حدودی دیده خواهد شد:
+
+:::{.ltr}
+#0000ff80
+:::
+
+ دو رقم آخر عددی بین 0 تا ff یا همان 255 است.
+
+از آنجا که معادل رنگ آبی کد زیر است:
+
+:::{.ltr}
+rgb(0, 0, 255)
+:::
+می توانستیم به جای کد رنگ از کد زیر برای رسیدن به آن استفاده کنیم:
+
+:::{.ltr}
+rgba(0, 0, 255, 0.5)
+:::
+
+
+alpha تعیین کننده میزان رویت رنگ پس زمینه المنت است:
+
+::: {.callout-tip collapse="true"}
+## Expand to view code
+
+```html
+<style>
+    #container {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        background-image: repeating-linear-gradient(45deg,
+                white,
+                white 24px,
+                black 25px,
+                black 50px);
+    }
+
+    .item {
+        flex: 1;
+        margin: 20px;
+    }
+
+    :root {
+        --base-color: purple;
+        --standard-opacity: 0.75;
+    }
+
+    #one {
+        background-color: var(--base-color);
+    }
+
+    #two {
+        background-color: hwb(from var(--base-color) h w b / var(--standard-opacity));
+    }
+</style>
+<div id="container">
+    <div class="item" id="one"></div>
+    <div class="item" id="two"></div>
+</div>
+
+
+```
+
+:::
+
+```{=html}
+<style>
+    #sampledivColors2 #container {
+        display: flex;
+        width: 100%;
+        height: 20vh;
+        background-image: repeating-linear-gradient(45deg,
+                white,
+                white 24px,
+                black 25px,
+                black 50px);
+    }
+
+    #sampledivColors2 .item {
+        flex: 1;
+        margin: 20px;
+    }
+
+    :root {
+        --base-color: purple;
+        --standard-opacity: 0.75;
+    }
+
+    #sampledivColors2 #one {
+        background-color: var(--base-color);
+    }
+
+    #sampledivColors2 #two {
+        background-color: hwb(from var(--base-color) h w b / var(--standard-opacity));
+    }
+</style>
+<div class=" output" id="sampledivColors2">
+    <div id="container">
+        <div class="item" id="one"></div>
+        <div class="item" id="two"></div>
+    </div>
+</div>
+```

@@ -51,6 +51,98 @@ p.container {
 }
 ```
 
+**Attribute selector**
+می توان عناصری که خاصیت مشخصی دارند نیز انتخاب کرد:
+```css
+a[target="_blank"] {
+    background-color: yellow;
+}
+```
+این کد هایپرلینک هایی که در پنجره جدید باز می شوند انتخاب خواهد کرد.
+همچنین اگر آیتم هایی مثل فلش معنی خاصی در سایت دارند می توان به کمک خاصیت زیر برای RTL ها کارکرد آنها را تغییر داد:
+
+```css
+html[dir="rtl"] .arrow-back {
+  transform: scaleX(-1); /* افقی آینه می‌شود */
+}
+```
+کد زیر المنت هایی که خاصیت title  آنها حاوی کلمه flower است را انتخاب خواهد کرد:
+```html
+<style>
+    [title~="flower"] {
+        border: 1px solid yellow;
+    }
+</style>
+
+<a href="https://example.com" title="see flower details">
+    مشاهده مستندات
+</a>
+```
+
+کد زیر همین کار را با عناصری که کلمه اول کلاس آنها top آنها است خواهد کرد:
+
+```html
+<style>
+    [class|="top"] {
+        background: yellow;
+    }
+</style>
+
+<div class="top-sub lesson-item" style="background: yellow;">
+    <span>📌 ۱.۱ - آشنایی با مفاهیم پایه</span>
+</div>
+```
+اگر کلاس عنصری topcontent باشد انتخاب نخواهد شد و باید از کد زیر استفاده کنیم تا انتخاب شود:
+```css
+[class^="top"] {
+  background: yellow;
+}
+```
+کد زیر عناصری که نام کلاس آنها به test ختم شده انتخاب خواهد کرد.
+```css
+[class$="test"] {
+  background: yellow;
+}
+```
+
+کد زیر عناصری که نام کلاس آنها در هر کجایش حاوی te است انتخاب خواهد کرد.
+
+```css
+[class*="te"] {
+  background: yellow;
+}
+```
+:::{.ltr}
+
+| انتخابگر              | معنی              | مثال             | توضیح                                                  |
+|-----------------------|-------------------|------------------|--------------------------------------------------------|
+|                       | وجود دارد         | [title]          | المان‌هایی که ویژگی <br>title<br> را دارند (هر مقداری) |
+| =                     | دقیقاً برابر      | [type="text"]    | مقدار دقیقاً برابر با                                  |
+| ~=                    | شامل کلمه         | [class~="btn"]   | مقدار شامل کلمه <br>"btn"<br> باشد (با فاصله جدا شده)  |
+| |=                    | شروع با value-    | [class|="top"]   | دقیقاً <br>"top" <br>یا شروع با <br>"top-"             |
+| ^=                    | شروع با           | [class^="top"]   | مقدار با "top" شروع شود (هر چیزی)                      |
+| $=                    | خاتمه با          | [href$=".pdf"]   | مقدار با <br>".pdf"<br> تمام شود                       |
+| *=                    | شامل              | [class*="btn"]   | مقدار شامل <br>"btn"<br> در هر جایی باشد               |
+| [attribute="value" i] | case-insensitive  | [type="text" i]  | تطبیق بدون توجه به بزرگ/کوچکی حروف                     |
+
+:::
+یکی از کاربردهای انتخاب با خاصیت فرم دهی به برخی عناصر بدون ایجاد نام و مشخصه ای دیگر برای آنهاست:
+
+```css
+input[type="text"] {
+  width: 150px;
+  display: block;
+  margin-bottom: 10px;
+  background-color: yellow;
+}
+
+input[type="button"] {
+  width: 120px;
+  margin-left: 35px;
+  display: block;
+}
+```
+
 **Universal Selector**
 
 همه اجزای داخل html را انتخاب میکند.
@@ -62,8 +154,9 @@ p.container {
 }
 ```
 
-::: {.callout-note}
- نکته مهم: اگر یکی از این خواص هم در id ستاره وجود داشته باشد هم در id مستقیم آن شی اولویت با id داخل شی خواهد بود. مثلا اگر در فایل css داشته باشیم :
+::: {.callout-note collapse="true"}
+##  نکته: همپوشانی در انتخابگرها
+  نکته مهم: اگر یکی از این خواص هم در id ستاره وجود داشته باشد هم در id مستقیم آن شی اولویت با id داخل شی خواهد بود. مثلا اگر در فایل css داشته باشیم :
 ```html
 <style>
 * {
@@ -530,7 +623,8 @@ former_element ~ target_element { style properties }
         border-collapse: collapse;
     }
 
-    #samplediv10 td ,th {
+    #samplediv10 td ,
+    #samplediv10 th {
         border: 1px solid black;
         text-align: center;
     }
@@ -1001,7 +1095,210 @@ table:has(tr.selected) {
 ### last-of-type
 آخرین عنصر از نوع خود (نام تگ) را در میان گروهی از عناصر خواهر و برادر نشان می‌دهد.
 
-### تمرین
+## شبه عناصر
+برای فرم دهی به قسمت خاصی از المنت ها استفاده می‌شود.
+
+```css
+p::first-line {
+    color: #ff0000;
+    font-variant: small-caps;
+}
+```
+کد فوق خط اول عناصر p  را انتخاب خواهد کرد.
+
+```css
+p::first-letter {
+    color: #ff0000;
+    font-size: xx-large;
+}
+```
+کد بالا نیز حرف اول عناصر p را انتخاب خواهد کرد.همچنین می توان انتخاب را روی کلاس خاصی انجام داد:
+```css
+p.intro::first-letter {
+    color: #ff0000;
+    font-size: 200%;
+}
+```
+first-letter فقط برای عناصر block-level کارایی دارد.
+
+با کد زیر می توان قبل از عنصر خاص آیتمی را اضافه کرد:
+```css
+p::before {
+    content: url('./img/ww.png');
+    height: .5rem;
+}
+```
+با کد زیر همین کار بعد از المنت مشخص شده انجام خواهد شد.
+```css
+p::after {
+    content: url(smiley.gif);
+}
+```
+با شبه المنت زیر می‌شود تغییراتی در li داد:
+```css
+::marker {
+    color: red;
+    font-size: 23px;
+}
+```
+Marker ها در لیست های مرتب و بدون ترتیب استفاده می شوند.
+همچنین از طریق انتخاب زیر می توان روی عناصری که کاربر انتخاب کرده تغییراتی اعمال کرد:
+```css
+::selection {
+    color: red;
+    background: yellow;
+}
+```
+
+```{=html}
+<style>
+    #samplediv13 ::selection {
+        color: red;
+        background: yellow;
+    }
+</style>
+<div class="output ltr" id="samplediv13">
+    <h2>Select some text on this page</h2>
+
+    <p>This is a paragraph.</p>
+
+    <div>This is some text in a div element.</div>
+</div>
+```
+ همچنین First-letter :
+
+```css
+#samplediv15 p::first-letter {
+    font-size: 200%;
+    font-weight: bold;
+    color: #8A2BE2;
+}
+```
+
+```{=html}
+<style>
+    #samplediv15 p::first-letter {
+        font-size: 200%;
+        font-weight: bold;
+        color: #8A2BE2;
+    }
+</style>
+<div class="output ltr" id="samplediv15">
+    <p>My name is Donald.</p>
+    <p>My best friend is Mickey.</p>
+    <p>We live in Duckburg.</p>
+</div>
+```
+
+با placeholder Selector می توان عناصر مجهز به این خاصیت را انتخاب کرد:
+
+```css
+::placeholder {
+    color: red;
+    font-size: 1.2em;
+    font-style: italic;
+    opacity: 0.5;
+}
+```
+```{=html}
+<style>
+    #samplediv16 ::placeholder {
+        color: red;
+        font-size: 1.2em;
+        font-style: italic;
+        opacity: 0.5;
+    }
+</style>
+<div class="output ltr" id="samplediv16">
+    <input type="text" placeholder="this is a custom placeholder" size="30">
+</div>
+```
+
+شبه عنصر backdrop یک جعبه به اندازه viewport است که بلافاصله زیر هر عنصری که در لایه بالایی نمایش داده می‌شود، رندر می‌شود. مثلا به کمک آن می توان پس زمینه dialog را قالب بندی کرد:
+
+```css
+::backdrop {
+    background-color: rgb(0, 0, 0, .8);
+}
+```
+
+```{=html}
+<style>
+    #samplediv18 dialog::backdrop {
+        background-color: rgb(0, 0, 0, .8);
+    }
+</style>
+<div class="output ltr" id="samplediv18">
+    <button popovertarget="favDialog">Show a dialog</button>
+    <dialog id="favDialog" popover>
+        <p>The background shown outside of this dialog is a backdrop.</p>
+        <button popovertarget="favDialog" popovertargetaction="hide">Close the dialog</button>
+    </dialog>
+</div>
+```
+
+## وزن یا اولویت [^6]
+
+[^6]: Specificity
+
+یعنی قانونی که تعیین می‌کند کدام استایل بر دیگری غلبه کند زمانی که چند سلکتور به یک المان اشاره می‌کنند. این قانون id, class, element  نام دارد:
+
+:::{.ltr}
+
+| مثال                   | id, class, element | وزن  |
+|------------------------|--------------------|------|
+| p { }                  |  0, 0, 1           | 1    |
+| .class { }             |  0, 1, 0           | 10   |
+| #id { }                | 1, 0, 0            | 100  |
+| div.class1.class2 { }  |  0, 2, 1           | 21   |
+| div#id.class { }       | 1, 1, 1            | 111  |
+| div.class { }          | 0, 1, 1            | 11   |
+| div p { }              |  0, 0, 2           | 2    |
+
+:::
+
+نکات تکمیلی وزن دهی:
+
+:::{.ltr}
+
+| نوع سلکتور             | وزن           | مثال                         |
+|------------------------|---------------|------------------------------|
+| !important             | ∞ (بی‌نهایت)  | color: red !important;       |
+| Inline Style           | 1000          | style="color: red;"          |
+| ID                     | 100           | #header                      |
+| کلاس، شبه‌کلاس، ویژگی  | 10            | .btn, :hover, [type="text"]  |
+| المان (تگ)             | 1             | div, p, h1                   |
+| Universal Selector     | 0             | *                            |
+
+:::
+
+هر چقدر وزن یک selector بیشتر باشد اولویت بالاتری دارد.
+برای کنترل ساده تر وزن ها به جای حفظ روش بالا چند تکنیک ساده را رعایت می کنیم:
+
+- از <bid>!important</bdi> فقط در موارد ضروری استفاده کنید (مثل کلاس‌های utility در چارچوبهایی نظیر بوت استرپ و Tailwind)
+- استفاده از کلاس‌ها به جای ID
+- افزایش وزن با تکرار کلاس
+
+```css
+.btn.btn.btn {   background: red;}
+```
+- استفاده از ویژگی‌های خاص‌تر
+
+```css
+[class="btn-primary"] {
+    background: blue;
+}
+```
+
+- ترتیب در فایل CSS . اگر وزن ها برابر باشد آخرین مورد اعمال می شود: [^7]
+
+```css
+p { color: red; }    
+p { color: blue; } 
+```
+[^7]:  قانون Cascade یا آبشار در CSS: در قوانین هم وزن قانونی که پایین تر است در نهایت اعمال می شود.
+
+## تمرین
 **تمرین اول:**
 
 ```html
@@ -1094,4 +1391,3 @@ table:has(tr.selected) {
 
 کاربرد عملی کد فوق در تغییر حالت منوی های سایت به حالت همبرگری است وقتی سایز صفحه از یک مقدار کوچک تر میشود.
 
-## شبه عناصر

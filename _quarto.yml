@@ -19,6 +19,7 @@ book:
       chapters: 
       - parts\CSS\index.qmd
       - parts\CSS\Selectors.qmd
+      - parts\CSS\Colors.qmd
     - part: "راهنماها"
       chapters:
       - parts\HowTo\BeforeAfterSlider.qmd

@@ -122,6 +122,7 @@ code {
 .ltr {
     direction: ltr;
     font-size: .8rem;
+    font-feature-settings: normal;
 }
 
 
