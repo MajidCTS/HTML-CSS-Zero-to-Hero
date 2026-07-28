@@ -11,14 +11,15 @@ book:
   
   chapters:
     - index.qmd
-    - part: "HTML"
+    - part: "زبان نشانه‌گذاری فرامتن"
       chapters: 
         - parts\HTML\index.qmd
         - parts\HTML\elements.qmd
-    - part: "CSS"
+    - part: "شیوه‌نامه‌های آبشاری"
       chapters: 
       - parts\CSS\index.qmd
-    - part: "How To"
+      - parts\CSS\Selectors.qmd
+    - part: "راهنماها"
       chapters:
       - parts\HowTo\BeforeAfterSlider.qmd
     - references.qmd
